@@ -20,9 +20,11 @@ public class UserRepositoryTest {
 	
 	@Test
 	public void addIndex() {
-		esTemplate.createIndex(User.class);
-		esTemplate.putMapping(User.class);
-		esTemplate.refresh(User.class);
+		//esTemplate.deleteIndex(User.class);
+		//esTemplate.createIndex(User.class);
+		//if(esTemplate.putMapping(User.class) == true) {
+		//	System.out.println("jmrjmrjmr ");
+		//}
 	}
 	
 	@Test

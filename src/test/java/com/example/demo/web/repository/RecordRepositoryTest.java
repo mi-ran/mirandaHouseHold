@@ -1,5 +1,7 @@
 package com.example.demo.web.repository;
 
+import java.util.Date;
+
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,14 +22,23 @@ public class RecordRepositoryTest {
 	
 	@Test
 	public void addIndex() {
-		esTemplate.createIndex(Record.class);
-		esTemplate.putMapping(Record.class);
-		esTemplate.refresh(Record.class);
+		//esTemplate.deleteIndex(Record.class);
+		//esTemplate.createIndex(Record.class);
+		//esTemplate.putMapping(Record.class);
+		//esTemplate.refresh(Record.class);
 	}
 	
 	@Test
 	public void getAll() {
 		Iterable<Record> result = recordRepository.findAll();
+		for(Record record : result) {
+			System.out.println(record);
+		}
+	}
+	
+	@Test
+	public void getRecord() {
+		Iterable<Record> result = recordRepository.findByUserIdAndAssetId("", 0, new Date(), new Date());
 		for(Record record : result) {
 			System.out.println(record);
 		}

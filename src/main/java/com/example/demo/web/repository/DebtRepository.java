@@ -1,5 +1,6 @@
 package com.example.demo.web.repository;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.elasticsearch.annotations.Query;
@@ -13,4 +14,17 @@ public interface DebtRepository extends ElasticsearchCrudRepository<Debt, Intege
 			+ "\"userId\": {"
 			+ "\"query\": \"?0\"}}}")
 	List<Debt> findByUserId(String userId);
+	
+	@Query("{\"bool\": {"
+			+ "\"must\": ["
+			+ "{\"match\": {\"userId\":\"?0\"}}"
+			+ "],"
+			+ "\"filter\": {"
+			+ "\"range\": {"
+			+ "\"date\": {"
+			+ "\"gte\": \"?1\","
+			+ "\"lt\": \"?2\"}}"
+			+ "}"
+			+ "}}")
+	List<Debt> findByUserId(String userId, Date startDate, Date endDate);
 }

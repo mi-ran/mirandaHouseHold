@@ -20,9 +20,9 @@ public class CategoryRepositoryTest {
 	
 	@Test
 	public void addInex() {
-		esTemplate.createIndex(Category.class);
-		esTemplate.putMapping(Category.class);
-		esTemplate.refresh(Category.class);
+		//esTemplate.createIndex(Category.class);
+		//esTemplate.putMapping(Category.class);
+		//esTemplate.refresh(Category.class);
 	}
 	
 	@Test

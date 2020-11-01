@@ -13,10 +13,11 @@ public interface AssetRepository extends ElasticsearchCrudRepository<Asset, Inte
 			+ "\"query\": \"?0\"}}}")
 	List<Asset> findByUserId(String userId);
 	
-	@Query("{\"match\": {"
-			+ "\"userId\": {"
-			+ "\"query\": \"?0\"} "
-			+ "\"id\": {"
-			+ "\"query\": \"?1\"}}}")
+	@Query("{\"bool\": {"
+			+ "\"must\": ["
+			+ "{\"match\": {\"userId\":\"?0\"}},"
+			+ "{\"match\": {\"id\":\"?1\"}}"
+			+ "]}"
+			+ "}")
 	Asset findByUserIdAndAssetId(String userId, int assetId);
 }

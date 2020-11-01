@@ -1,6 +1,6 @@
 package com.example.demo.web.mvc.model;
 
-import java.sql.Date;
+import java.util.Date;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.DateFormat;
@@ -20,14 +20,19 @@ import lombok.NoArgsConstructor;
 @Document(indexName = "debt", type = "debt")
 public class Debt {
 	@Id
+	@Field(type=FieldType.Integer)
 	private int id;
-	private int userId;
+	@Field(type=FieldType.Text)
+	private String userId;
+	@Field(type=FieldType.Text)
 	private String name;
 	
-	@Field(type = FieldType.Date, format = DateFormat.custom, pattern = "yyyy.MM.dd hh:mm:ss")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy.MM.dd hh:mm:ss", timezone = "Asia/Seoul")
+	@Field(type = FieldType.Date)
+    @JsonFormat(shape = JsonFormat.Shape.STRING)
 	private Date date;
 	
+	@Field(type=FieldType.Integer)
 	private int borrowed;  // 빌린돈
+	@Field(type=FieldType.Integer)
 	private int borrowing; // 빌려준 돈
 }

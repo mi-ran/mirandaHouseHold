@@ -1,5 +1,6 @@
 package com.example.demo.web.mvc.controller;
 
+import java.sql.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.web.mvc.model.Debt;
 import com.example.demo.web.repository.DebtRepository;
@@ -25,8 +27,20 @@ public class DebtController {
 	 */
 
 	// 모든 부채를 검색
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/all", method = RequestMethod.GET)
 	public Map<String, Object> getDebts(@PathVariable String userId) {
+		Map<String, Object> result = new HashMap();
+		List<Debt> debts = debtRepository.findByUserId(userId);
+		result.put("debts", debts);
+		return result;
+	}
+	
+	/**
+	 * GET
+	 */
+	// 기간으로 부채를 검색
+	@RequestMapping(value="/", method = RequestMethod.GET)
+	public Map<String, Object> getDebtsFiltRange(@PathVariable String userId, @RequestParam("startDate") Date startDate, @RequestParam("endDate") Date endDate) {
 		Map<String, Object> result = new HashMap();
 		List<Debt> debts = debtRepository.findByUserId(userId);
 		result.put("debts", debts);

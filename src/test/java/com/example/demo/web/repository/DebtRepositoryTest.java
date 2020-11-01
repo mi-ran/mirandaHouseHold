@@ -1,5 +1,6 @@
 package com.example.demo.web.repository;
 
+import java.util.Date;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -22,10 +23,20 @@ public class DebtRepositoryTest {
 	
 	@Test
 	public void addIndex() {
-		esTemplate.deleteIndex(Debt.class);
-		esTemplate.createIndex(Debt.class);
-		esTemplate.putMapping(Debt.class);
-		esTemplate.refresh(Debt.class);
+		//esTemplate.deleteIndex(Debt.class);
+		//esTemplate.createIndex(Debt.class);
+		//esTemplate.putMapping(Debt.class);
+		//esTemplate.refresh(Debt.class);
+		/*
+		Debt debt = new Debt();
+		debt.setDate(new Date());
+		debt.setBorrowed(0);
+		debt.setBorrowing(0);
+		debt.setId(0);
+		debt.setUserId("jjj");
+		debt.setName("dd");
+		debtRepository.save(debt);
+		*/
 	}
 
 	@Test
@@ -38,9 +49,13 @@ public class DebtRepositoryTest {
 	
 	@Test
 	public void findByUserId() {
-		List<Debt> result = debtRepository.findByUserId("");
-		for (Debt db : result) {
-			System.out.println(db);
+		List<Debt> result = debtRepository.findByUserId("aaa");
+		if (result != null) {
+			for (Debt db : result) {
+				System.out.println(db);
+			}
 		}
+		
+		List<Debt> result2 = debtRepository.findByUserId("aaa", new Date(), new Date());
 	}
 }

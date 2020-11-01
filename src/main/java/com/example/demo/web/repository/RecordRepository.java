@@ -1,5 +1,6 @@
 package com.example.demo.web.repository;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.elasticsearch.annotations.Query;
@@ -9,10 +10,18 @@ import com.example.demo.web.mvc.model.Record;
 
 public interface RecordRepository extends ElasticsearchCrudRepository<Record, Integer>{
 
-	@Query("{\"match\": {"
-			+ "\"userId\": {"
-			+ "\"query\": \"?0\"} "
-			+ "\"id\": {"
-			+ "\"query\": \"?1\"}}}")
-	List<Record> findByUserIdAndAssetId(String userId, int assetId);
+	
+	@Query("{\"bool\": {"
+			+ "\"must\": ["
+			+ "{\"match\": {\"userId\":\"?0\"}},"
+			+ "{\"match\": {\"id\":\"?1\"}}"
+			+ "],"
+			+ "\"filter\": {"
+			+ "\"range\": {"
+			+ "\"date\": {"
+			+ "\"gte\": \"?2\","
+			+ "\"lt\": \"?3\"}}"
+			+ "}"
+			+ "}}")
+	List<Record> findByUserIdAndAssetId(String userId, int assetId, Date startDate, Date endDate);
 }

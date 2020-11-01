@@ -21,8 +21,7 @@ public class RecordController {
 	// TODO 날짜 검색, displayCount
 	@RequestMapping(value = "/{assetId}", method = RequestMethod.GET)
 	public Map<String, Object> getRecordsByAsset(@PathVariable String userId, @PathVariable int assetIdx,
-			@RequestParam("startDate") Date startDate, @RequestParam("endDate") Date endDate,
-			@RequestParam("displayCount") int displayCount, @RequestParam("startIndex") int startIndex)
+			@RequestParam("startDate") Date startDate, @RequestParam("endDate") Date endDate)
 	{
 		Map<String, Object> result = new HashMap();
 		

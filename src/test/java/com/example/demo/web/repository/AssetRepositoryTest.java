@@ -24,7 +24,6 @@ public class AssetRepositoryTest {
 	
 	@Test
 	public void addIndex() {
-		//esTemplate.deleteIndex(Asset.class);
 		//esTemplate.createIndex(Asset.class);
 		//esTemplate.putMapping(Asset.class);
 		//esTemplate.refresh(Asset.class);
