@@ -26,7 +26,7 @@ public class DebtController {
 
 	// 모든 부채를 검색
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public Map<String, Object> getDebts(@PathVariable int userId) {
+	public Map<String, Object> getDebts(@PathVariable String userId) {
 		Map<String, Object> result = new HashMap();
 		List<Debt> debts = debtRepository.findByUserId(userId);
 		result.put("debts", debts);

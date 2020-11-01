@@ -29,23 +29,18 @@ public class RecordController {
 		return result;
 	}
 	
+	/*
 	// recordId로 검색해서 하나의 record를 조회
 	@RequestMapping(value = "/{recordId}", method = RequestMethod.GET)
 	public String getRecord(@PathVariable int recordId) {
 		return "record GET " + recordId;
 	}
 	
-	/**
-	 * UPDATE
-	 */
 	@RequestMapping(value = "/{recordId}", method = RequestMethod.PUT)
 	public String modifyRecord(@PathVariable int recordId) {
 		return "record PUT " + recordId;
 	}
 	
-	/**
-	 * DELETE
-	 */
 	// 하나의 레코드 삭제
 	@RequestMapping(value = "/{recordId}", method = RequestMethod.DELETE)
 	public String removeRecord(@PathVariable int recordId) {
@@ -58,11 +53,10 @@ public class RecordController {
 		return "record DELETE " + assetId;
 	}
 	
-	/**
-	 * INSERT
-	 */
+	
 	@RequestMapping(method = RequestMethod.POST)
 	public String insertRecord() {
 		return "record POST ";
 	}
+	**/
 }

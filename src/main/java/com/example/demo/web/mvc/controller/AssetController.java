@@ -29,6 +29,7 @@ public class AssetController {
 		return result;
 	}
 	
+	// TODO dateParam, displayCount
 	@RequestMapping(value = "/{assetId}", method = RequestMethod.GET)
 	public Map<String, Object> getAsset(@PathVariable String userId, @PathVariable int assetId) {
 		Map<String, Object> result = new HashMap();
@@ -36,24 +37,4 @@ public class AssetController {
 		result.put("asset", asset);
 		return result;
 	}
-	
-	/*
-	//update
-	@RequestMapping(value = "/{assetId}", method = RequestMethod.PUT)
-	public String modifyAsset(@PathVariable int userId, @PathVariable int assetId) {
-		return "asset PUT " + assetId;
-	}
-	
-	//delete
-	@RequestMapping(value = "/{assetId}", method = RequestMethod.DELETE)
-	public String removeAsset(@PathVariable int userId, @PathVariable int assetId) {
-		return "asset DELETE " + assetId;
-	}
-	
-	//insert
-	@RequestMapping(value = "/{assetId}", method = RequestMethod.POST)
-	public String insertAsset(@PathVariable int userId, @PathVariable int assetId) {
-		return "asset POST " + assetId;
-	}
-	*/
 }

@@ -38,7 +38,7 @@ public class DebtRepositoryTest {
 	
 	@Test
 	public void findByUserId() {
-		List<Debt> result = debtRepository.findByUserId(0);
+		List<Debt> result = debtRepository.findByUserId("");
 		for (Debt db : result) {
 			System.out.println(db);
 		}

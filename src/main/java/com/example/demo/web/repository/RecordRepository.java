@@ -9,6 +9,10 @@ import com.example.demo.web.mvc.model.Record;
 
 public interface RecordRepository extends ElasticsearchCrudRepository<Record, Integer>{
 
-	@Query()
-	List<Record> findByUserIdAndAssetId();
+	@Query("{\"match\": {"
+			+ "\"userId\": {"
+			+ "\"query\": \"?0\"} "
+			+ "\"id\": {"
+			+ "\"query\": \"?1\"}}}")
+	List<Record> findByUserIdAndAssetId(String userId, int assetId);
 }
