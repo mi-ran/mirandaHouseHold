@@ -37,4 +37,6 @@ public class Record {
 	private int import_;  // 수입
 	@Field(type=FieldType.Integer)
 	private int account;  // 잔액
+	@Field(type=FieldType.Integer)
+	private int categoryId; // 카테고리
 }

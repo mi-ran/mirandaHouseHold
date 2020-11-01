@@ -24,4 +24,19 @@ public interface RecordRepository extends ElasticsearchCrudRepository<Record, In
 			+ "}"
 			+ "}}")
 	List<Record> findByUserIdAndAssetId(String userId, int assetId, Date startDate, Date endDate);
+	
+	@Query("{\"bool\": {"
+			+ "\"must\": ["
+			+ "{\"match\": {\"userId\":\"?0\"}},"
+			+ "{\"match\": {\"id\":\"?1\"}},"
+			+ "{\"match\": {\"categoryId\":\"?2\"}}"
+			+ "],"
+			+ "\"filter\": {"
+			+ "\"range\": {"
+			+ "\"date\": {"
+			+ "\"gte\": \"?3\","
+			+ "\"lt\": \"?4\"}}"
+			+ "}"
+			+ "}}")
+	List<Record> findByUserIdAndAssetIdAndCategory(String userId, int assetId, int categoryIdx, Date startDate, Date endDate);
 }
