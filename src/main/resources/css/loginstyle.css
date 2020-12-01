@@ -1,0 +1,86 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'timonsori';
+    src: url('../font/TmonMonsori.ttf');
+    font-style: normal;
+    font-weight: normal;
+}
+/*reset*/
+* {
+    margin: 0; padding: 0; text-decoration: none;
+}
+/*pc*/
+body {
+    position: relative;
+    overflow: hidden;
+}
+header {
+    width: 1920px;
+    height: 600px;
+    background-color: #8fc7b8;
+    transform: skewY(-5deg);
+    margin-top: -85px;
+}
+.textarea {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    transform: skewY(5deg);
+    padding-top: 50%;
+    margin-top: -685px;
+    text-align: center;
+}
+.sasun {
+    margin-top: -132px;
+}
+.loginarea {
+    width: 1920px;
+    height: 200px;
+    position: relative;
+}
+.idd1 {
+    position: absolute;
+    left: 1300px;
+    top: -110px;
+}
+.id {
+    width: 300px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: -5px -2px 4px 1px #d6d6d6 inset;
+}
+.idd1 p {
+    display: inline-block;
+}
+.pw1 {
+    position: absolute;
+    left: 1300px;
+    top: -40px;
+}
+.pw {
+    width: 300px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: -5px -2px 4px 1px #d6d6d6 inset;
+}
+.pw1 p {
+    display: inline-block;
+    margin-left: -9px;
+}
+.loginbt {
+    position: absolute;
+    left: 1630px;
+    top: -110px;
+}
+.lgbt {
+    width: 80px;
+    height: 120px;
+    color: white;
+    font-size: 25px;
+    background-color: #8fc7b8;
+    border: none;
+    border-radius: 5px;
+    box-shadow: -5px -2px 4px 1px #80b0a3 inset;
+}
