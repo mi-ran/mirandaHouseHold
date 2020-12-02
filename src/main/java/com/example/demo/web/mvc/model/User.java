@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(indexName = "user", type = "user")
+@Document(indexName = "user")
 public class User {
 	@Id
 	@Field(type=FieldType.Text)
