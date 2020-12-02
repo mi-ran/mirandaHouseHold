@@ -71,7 +71,14 @@ header {
     padding-top: 70px;
     padding-bottom: 200px;
 }
+.user {
+    color: white;
+    position: absolute;
+    top: 0px;
+    right: 160px;
+}
 .textarea h3 {
+    margin-top: 50px;
     font-size: 40px;
     color: white;
     text-shadow: 2px 2px 2px gray;
