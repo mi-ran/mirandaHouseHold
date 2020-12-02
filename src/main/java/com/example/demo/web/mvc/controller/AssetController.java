@@ -8,8 +8,10 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.demo.web.mvc.model.Asset;
 import com.example.demo.web.repository.AssetRepository;
@@ -29,12 +31,18 @@ public class AssetController {
 		return result;
 	}
 	
-	// TODO dateParam, displayCount
 	@RequestMapping(value = "/{assetId}", method = RequestMethod.GET)
 	public Map<String, Object> getAsset(@PathVariable String userId, @PathVariable int assetId) {
 		Map<String, Object> result = new HashMap();
 		Asset asset = assetRepository.findByUserIdAndAssetId(userId, assetId);
 		result.put("asset", asset);
 		return result;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/", method = RequestMethod.PUT)
+	public void insertAsset(@PathVariable String userId, @RequestBody Asset asset) {
+		assetRepository.count();
+		//assetRepository.
 	}
 }

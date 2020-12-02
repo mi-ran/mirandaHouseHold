@@ -20,4 +20,5 @@ public interface AssetRepository extends ElasticsearchCrudRepository<Asset, Inte
 			+ "]}"
 			+ "}")
 	Asset findByUserIdAndAssetId(String userId, int assetId);
+	
 }

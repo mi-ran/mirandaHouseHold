@@ -14,11 +14,11 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(indexName = "category", type = "category")
+@Document(indexName = "category")
 public class Category {
 	@Id
-	@Field(type=FieldType.Integer)
-	private int id;
+	@Field(type=FieldType.Text)
+	private String id;
 	@Field(type=FieldType.Text)
 	private String userId;
 	@Field(type=FieldType.Text)

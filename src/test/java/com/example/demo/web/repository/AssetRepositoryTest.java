@@ -17,16 +17,20 @@ import com.example.demo.web.mvc.model.Asset;
 @SpringBootTest
 public class AssetRepositoryTest {
 	@Autowired
-	private ElasticsearchTemplate esTemplate;
+	private AssetRepository assetRepository;
 	
 	@Autowired
-	private AssetRepository assetRepository;
+	private ElasticsearchTemplate esTemplate;
+	
 	
 	@Test
 	public void addIndex() {
 		//esTemplate.createIndex(Asset.class);
 		//esTemplate.putMapping(Asset.class);
 		//esTemplate.refresh(Asset.class);
+		Asset asset = new Asset();
+		assetRepository.save(asset);
+		assetRepository.save(new Asset());
 	}
 	
 	@Test

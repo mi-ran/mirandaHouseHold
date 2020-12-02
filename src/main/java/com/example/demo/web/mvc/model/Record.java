@@ -17,11 +17,11 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(indexName = "record", type = "record")
+@Document(indexName = "record")
 public class Record {
 	@Id
-	@Field(type=FieldType.Integer)
-	private int id;
+	@Field(type=FieldType.Text)
+	private String id;
 	@Field(type=FieldType.Integer)
 	private int assetId;
 	@Field(type=FieldType.Text)
