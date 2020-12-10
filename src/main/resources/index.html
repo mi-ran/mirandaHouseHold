@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="kr">
+<html lang="kr" xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="utf-8"/>
         <title>가계부</title>
@@ -19,7 +19,7 @@
         
         <div class="middle">
         <div class="textarea">
-            <p class="user">조찬미 님</p>
+            <p class="user" th:text="${name}+'님'"></p>
             <div class="jasan">
                 <h3>자산</h3>
                 <a href="" target="_self">
