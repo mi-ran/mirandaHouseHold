@@ -2,6 +2,8 @@ package com.example.demo.web.mvc.controller;
 
 import java.util.Optional;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,14 +22,19 @@ public class UserController {
 	UserRepository userRepository;
 	
 	@RequestMapping(value = "/login/{id}", method = RequestMethod.GET)
-	public boolean canLogin(@PathVariable String userId, @RequestParam(defaultValue = "") String password) {
+	public boolean canLogin(HttpSession session, @PathVariable String userId, @RequestParam(defaultValue = "") String password) {
 		Optional<User> user = userRepository.findById(userId);
 		if (!user.isPresent()) {
 			// 새로운 계정 등록
 			registUser(userId, password);
+			session.setAttribute("LOGIN_ID", userId);
 			return true;
 		}
-		return user.get().getPassword().equals(password);
+		boolean result = user.get().getPassword().equals(password);
+		if (result) {
+			session.setAttribute("LOGIN_ID", userId);
+		}
+		return result;
 	}
 	
 	public void registUser(String userId, String password) {
