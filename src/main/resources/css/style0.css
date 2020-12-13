@@ -75,6 +75,22 @@ header {
     color: white;
     position: absolute;
     top: 0px;
+    right: 300px;
+}
+.logout p {
+    color: white;
+    margin-top: 6px;
+}
+.logout {
+    width: 120px;
+    height: 40px;
+    position: absolute;
+    top: -5px;
+    right: 160px;
+}
+.logout:hover {
+    background-color: #4a4a4a;
+    color: white;
     right: 160px;
 }
 .textarea h3 {
