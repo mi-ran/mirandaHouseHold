@@ -61,7 +61,7 @@ header {
     width: 100%;
     height: 200px;
 }
-.marea p {
+.marea p,.marea h4 {
     color: white;
 }
 .user {
@@ -80,27 +80,116 @@ header {
 .logout:hover {
     background-color: #4a4a4a;
 }
+.mbt1,.mbt2,.mbt3 {
+    width: 100px;
+    height: 40px;
+    float: left;
+    margin-top: 60px;
+    line-height: 40px;
+}
+.mbt1 {
+    margin-left: 750px;
+}
+.mbt2 {
+    margin-left: 50px;
+}
+.mbt3 {
+    margin-left: 50px;
+}
+.mbt1:hover,.mbt2:hover,.mbt3:hover {
+    background-color: #4a4a4a;
+}
 
+/*내용2*/
 .narea1 {
     transform: skewY(7deg);
+    overflow: hidden;
+    margin-bottom: 40px;
 }
+.leftbt,.rightbt {
+    width: auto;
+    height: 150px;
+    display: inline-block;
+}
+.leftbt {
+    float: left;
+    margin-left: 20%;
+}
+.rightbt {
+    float: left;
+    margin-left: 15%;
+}
+.won {
+    float: left;
+    margin-top: 60px;
+}
+.janaeck {
+    float: left;
+    margin-left: 16%;
+}
+.janaeck,.won {
+    display: inline-block;
+}
+
+/*내용3*/
 .narea2 {
     transform: skewY(7deg);
+    overflow: hidden;
+    margin-bottom: 40px;
 }
+.month {
+    margin-bottom: 40px;
+}
+.jichul {
+    float: left;
+    margin-left: 35%;
+}
+.suib {
+    float: left;
+    margin-left: 10%;
+}
+.jwon,.swon,.jnumber,.snumber {
+    display: inline-block;
+}
+
+/*middle-line*/
 .middlebt {
     transform: skewY(7deg);
     width: 100%;
     height: 50px;
     background-color: #4a4a4a;
+    line-height: 50px;
 }
+.middlebt h4 {
+    color: white;
+}
+
+/*표*/
 .pyo {
     transform: skewY(7deg);
     width: 100%;
     height: 600px;
     background-color: white;
+}
+.parea {
+    width: 1920px;
     overflow-x: hidden;
     overflow-y: auto;
-    padding-bottom: 100px;
+    padding-top: 20px;
+}
+.pyos th {
+    font-size: 20px;
+    height: 40px;
+    border-bottom: 1px solid #1c1c1c;
+}
+.p1 {
+    width: 100px;
+}
+.p2 {
+    width: 600px;
+}
+.p3,.p4,.p5,.p6 {
+    width: 200px;
 }
 .whiteback {
     width: 100%;
