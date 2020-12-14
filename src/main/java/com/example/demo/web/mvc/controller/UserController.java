@@ -21,8 +21,9 @@ public class UserController {
 	@Autowired
 	UserRepository userRepository;
 	
-	@RequestMapping(value = "/login/{id}", method = RequestMethod.GET)
-	public boolean canLogin(HttpSession session, @PathVariable String userId, @RequestParam(defaultValue = "") String password) {
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public boolean canLogin(HttpSession session, @RequestParam(defaultValue = "") String userId, @RequestParam(defaultValue = "") String password) {
+		/*
 		Optional<User> user = userRepository.findById(userId);
 		if (!user.isPresent()) {
 			// 새로운 계정 등록
@@ -35,6 +36,8 @@ public class UserController {
 			session.setAttribute("LOGIN_ID", userId);
 		}
 		return result;
+		*/
+		return false;
 	}
 	
 	public void registUser(String userId, String password) {
