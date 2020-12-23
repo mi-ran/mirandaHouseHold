@@ -2,12 +2,15 @@ package com.example.demo.web.mvc.controller;
 
 import java.util.Optional;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.demo.web.mvc.model.User;
 import com.example.demo.web.repository.UserRepository;
@@ -19,15 +22,25 @@ public class UserController {
 	@Autowired
 	UserRepository userRepository;
 	
-	@RequestMapping(value = "/login/{id}", method = RequestMethod.GET)
-	public boolean canLogin(@PathVariable String userId, @RequestParam(defaultValue = "") String password) {
+	@ResponseBody
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public boolean canLogin(HttpSession session, @RequestParam(defaultValue = "") String userId, @RequestParam(defaultValue = "") String password) {
+		/*
 		Optional<User> user = userRepository.findById(userId);
 		if (!user.isPresent()) {
 			// 새로운 계정 등록
 			registUser(userId, password);
+			session.setAttribute("LOGIN_ID", userId);
 			return true;
 		}
-		return user.get().getPassword().equals(password);
+		boolean result = user.get().getPassword().equals(password);
+		if (result) {
+			session.setAttribute("LOGIN_ID", userId);
+		}
+		return result;
+		*/
+		System.out.println("jmrjmr userId : " + userId + " password : " + password);
+		return false;
 	}
 	
 	public void registUser(String userId, String password) {
