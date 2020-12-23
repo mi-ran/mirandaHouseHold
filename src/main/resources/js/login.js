@@ -15,7 +15,7 @@ var loginObj = {
 				if (result == false) {
 					alert("Invalid Password");
 				} else {
-					window.location.href="index.html";
+					window.location.href="main";
 				}
 			}).fail(function (error) {
 				alert(error);
