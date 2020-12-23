@@ -1,0 +1,255 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'timonsori';
+    src: url('../font/TmonMonsori.ttf');
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'sandol';
+    src:url('../font/AppleSDGothicNeoR.ttf');
+}
+/*reset*/
+*{margin: 0; padding: 0; box-sizing: border-box; text-decoration: none;}
+h2,p,h3,h4,th,tr {
+    font-family: 'sandol';
+    color: '1c1c1c';
+}
+.janaeck,.won,.jnumber,.jwon,.snumber,.swon {
+    font-family: 'timonsori';
+}
+h2 {
+    font-size: 80px;
+}
+h3 {
+    font-size: 40px;
+}
+h4 {
+    font-size: 30px;
+}
+p {
+    font-size: 20px;
+}
+body {
+    width: 100%;
+    height: auto;
+    position: relative;
+    text-align: center;
+}
+#wrap {
+    width: 1920px;
+    height: auto;
+    overflow: hidden;
+}
+.area,.marea,.narea1,.narea2,.middlebt,.pyo,.footerarea {
+    transform: skewY(7deg);
+}
+header {
+    transform: skewY(-7deg);
+    width: 1920px;
+    height: 200px;
+}
+/*marea*/
+.middle {
+    width: 1920px;
+    height: auto;
+    background-color: #8fc7b8;
+    padding-top: 50px;
+    margin-top: -5px;
+    position: relative;
+    transform: skewY(-7deg);
+}
+.marea {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+.user,.logoutbt,.mbt1,.mbt2,.mbt3 {
+    color: white;
+}
+.user,.logoutbt {
+    float: right;
+    margin-right: 50px;
+}
+.user {
+    margin-top: 11px;
+    margin-right: 100px;
+}
+.logoutbt {
+    width: 80px;
+    height: 50px;
+    line-height: 50px;
+}
+.logoutbt:hover {
+    background-color: #141414;
+}
+.mbt1,.mbt2,.mbt3 {
+    float: left;
+    display: inline-block;
+    margin-top: 50px;
+    margin-left: 100px;
+    width: 85px;
+    height: 50px;
+    line-height: 50px;
+}
+.mbt1:hover,.mbt2:hover,.mbt3:hover {
+    background-color: #141414;
+}
+.mbt1 {
+    margin-left: 760px;
+}
+/*narea1*/
+.narea1 {
+    width: 1920px;
+    height: 300px;
+    overflow: hidden;
+}
+.bankm {
+    margin-bottom: 50px;
+}
+.leftbt,.rightbt {
+    width: 50px;
+    height: auto;
+}
+.leftbt {
+    float: left;
+    margin-left: 300px;
+}
+.rightbt {
+    float: right;
+    margin-right: 300px;
+}
+.janaeck,.won {
+    display: inline-block;
+}
+
+/*narea2*/
+.narea2 {
+    width: 1920px;
+    overflow: hidden;
+    height: 250px;
+}
+.month {
+    margin-bottom: 50px;
+}
+.jichul {
+    float: left;
+    margin-left: 600px;
+}
+.suib {
+    float: right;
+    margin-right: 600px;
+}
+.jnumber,.jwon,.snumber,.swon {
+    display: inline-block;
+}
+.totals,.totalj {
+    margin-bottom: 20px;
+}
+
+/*middlebt*/
+.middlebt {
+    width: 1920px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #4a4a4a;
+}
+.middlebt h4 {
+    color: white;
+}
+
+/*pyo*/
+.pyo {
+    width: 1920px;
+    height: 800px;
+    background-color: white;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.parea {
+    padding-top: 50px;
+    width: 1820px;
+    height: auto;
+    margin-left: 50px;
+    position: relative;
+}
+.pyos th {
+    border-bottom: 1px solid #4a4a4a;
+    border-right: 1px solid #4a4a4a;
+    font-size: 20px;
+    height: 30px;
+}
+.pyos th:last-child {
+    border-right: none;
+}
+.pyos tr td {
+    border-right: 1px solid #4a4a4a;
+    height: 40px;
+}
+.pyos tr td:last-child {
+    border-right: none;
+}
+.p1 {
+    width: 65px;
+}
+.p2 {
+    width: 850px;
+}
+.p3,.p4,.p5 {
+    width: 250px;
+}
+.p6 {
+    width: 150px;
+}
+.pbt {
+    width: 80px;
+    height: auto;
+    position: absolute;
+    right: 50px;
+    top: 500px;
+}
+.sasunm {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    z-index: 1;
+}
+.whiteback {
+    width: 1920px;
+    height: 100px;
+    background-color: white;
+    margin-top: -120px;
+}
+/*footer*/
+footer {
+    width: 100%;
+    height: 300px;
+    background-color: #4a4a4a;
+}
+.gigi {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 250px;
+    background-color: #4a4a4a;
+    transform: skewY(-7deg);
+    text-align: center;
+}
+.footerarea {
+    transform: skewY(7deg);
+    padding-top: 30px;
+}
+.flogo img {
+    padding-top: 20px;
+    display: block;
+    margin-left: 700px;
+}
+.map p {
+    color: white;
+    display: inline-block;
+    margin-left: 20px;
+}
+.copy {
+    margin-top: 20px;
+    color: white;
+}

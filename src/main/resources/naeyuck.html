@@ -6,6 +6,7 @@
         <link rel="stylesheet" type="text/css" href="css/naeyock.css">
     </head>
     <body>
+        <div id="wrap">
         <header>
             <div class="area">
                 <h1 class="logo">
@@ -18,28 +19,36 @@
         </header>
         
         <div class="middle">
-            <div class="naeyong">
                 <div class="marea">
-                    <p>누구누구 님</p>
+                    <p class="user">누구누구 님</p>
                     <a class="logoutbt" href="#"><div class="logout"><p>로그아웃</p></div></a>
-                    <div class="mbt1">
-                        <p>내역</p>
-                    </div>
-                    <div class="mbt2">
-                        <p>예산</p>
-                    </div>
-                    <div class="mbt3">
-                        <p>그래프</p>
-                    </div>
+                    <a href="#">
+                        <div class="mbt1">
+                            <h4>내역</h4>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="mbt2">
+                            <h4>예산</h4>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="mbt3">
+                            <h4>그래프</h4>
+                        </div>
+                    </a>
                 </div>
                 
                 <div class="narea1">
-                    <h3 class="bankm">신한은행</h3>
+                    <h4 class="bankm">신한은행</h4>
                     <a href="#">
                         <img class="leftbt" src="img/menu1_leftbt.png">
                     </a>
                     <h2 class="janaeck">1,000,000</h2>
                     <p class="won">원</p>
+                    <a href="#">
+                        <img class="rightbt" src="img/menu1_rightbt.png">
+                    </a>
                 </div>
                 
                 <div class="narea2">
@@ -47,13 +56,13 @@
                     
                     <div class="jichul">
                         <p class="totalj">총 지출</p>
-                        <h2 class="jnumber">283,000</h2>
+                        <h3 class="jnumber">283,000</h3>
                         <p class="jwon">원</p>
                     </div>
                     
                     <div class="suib">
                         <p class="totals">총 수입</p>
-                        <h2 class="snumber">4,000,000</h2>
+                        <h3 class="snumber">4,000,000</h3>
                         <p class="swon">원</p>
                     </div>
                 </div>
@@ -65,13 +74,14 @@
                 </a>
                 
                 <div class="pyo">
-                    <table border="1">
-                        <th>날짜</th>
-                        <th>내용</th>
-                        <th>수입</th>
-                        <th>지출</th>
-                        <th>잔액</th>
-                        <th>카테고리</th>
+                    <div class="parea">
+                    <table class="pyos" border="0">
+                        <th class="p1">날짜</th>
+                        <th class="p2">내용</th>
+                        <th class="p3">수입</th>
+                        <th class="p4">지출</th>
+                        <th class="p5">잔액</th>
+                        <th class="p6">카테고리</th>
                         <tr>
                             <td>12.1</td>
                             <td>12월 급여</td>
@@ -81,9 +91,13 @@
                             <td></td>
                         </tr>
                     </table>
+                    <a href="#">
+                        <img class="pbt" src="img/listpbt.png">
+                    </a>
+                    </div>
                 </div>
-            </div>
             <img class="sasunm" src="img/sasunm">
+            <div class="whiteback"></div>
         </div>
         
         <footer>
@@ -102,4 +116,5 @@
             </div>
             </div>
         </footer>
+        </div>
     </body>

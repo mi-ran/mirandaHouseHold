@@ -79,13 +79,13 @@ header {
 }
 .logout p {
     color: white;
-    margin-top: 6px;
 }
 .logout {
     width: 120px;
     height: 40px;
+    line-height: 40px;
     position: absolute;
-    top: -5px;
+    top: 0px;
     right: 160px;
 }
 .logout:hover {
