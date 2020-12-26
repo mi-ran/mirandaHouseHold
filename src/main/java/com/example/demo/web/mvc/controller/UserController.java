@@ -25,8 +25,6 @@ public class UserController {
 	@ResponseBody
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public boolean canLogin(HttpSession session, @RequestParam(defaultValue = "") String userId, @RequestParam(defaultValue = "") String password) {
-		System.out.println("userId : " + userId + " password : " + password);
-		
 		Optional<User> user = userRepository.findById(userId);
 		if (!user.isPresent()) {
 			// 새로운 계정 등록
