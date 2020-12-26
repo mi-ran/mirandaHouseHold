@@ -241,3 +241,89 @@ footer {
     margin-top: 20px;
     color: white;
 }
+/*modal_contants*/
+.modal {
+    width: 600px;
+    height: auto;
+    background-color: white;
+    position: fixed;
+    top: 20%;
+    right: 50%;
+    margin-right: -300px;
+    z-index: 3;
+}
+.madal_layer {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+}
+.minarea {
+    width: 600px;
+    height: 50px;
+    background-color: #8fc7b8;
+    line-height: 50px;
+}
+.minarea img {
+    height: 40px;
+    width: auto;
+    float: right;
+    margin-right: 20px;
+}
+.warea {
+    padding: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    line-height: 80px;
+}
+select {
+    width: 400px;
+    padding: 0px;
+}
+.meony_n,.money {
+    border-radius: 5px;
+    width: 400px;
+    height: 28px;
+    border: 0.5px solid #8d8d8d;
+}
+.money {
+    width: 300px;
+}
+.barea {
+    background-color: #4a4a4a;
+    width: 600px;
+    height: 50px;
+    line-height: 50px;
+    overflow: hidden;
+}
+.barea p {
+    color: white;
+    display: inline-block;
+}
+.addbt {
+    float: left;
+    margin-left: 20px;
+}
+.closebt {
+    float: right;
+    margin-right: 20px;
+}
+.months {
+    width: 120px;
+    padding: 5px;
+}
+.days {
+    width: 120px;
+    padding: 5px;
+}
+.years {
+    width: 120px;
+    padding: 5px;
+}
+
+.hide {
+    display: none;
+}

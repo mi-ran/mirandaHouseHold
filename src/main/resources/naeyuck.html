@@ -4,8 +4,60 @@
         <meta charset="utf-8"/>
         <title>가계부</title>
         <link rel="stylesheet" type="text/css" href="css/naeyock.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
     </head>
     <body>
+        <div class="modal hide">
+        <div class="modal_contants">
+            <div class="minarea">
+                <img src="img/logo2.png">
+            </div>
+            <div class="warea">
+                <form>
+                    년 <select class="years" name="years"></select> 
+                    월 <select class="months" name="months"></select>
+                    일 <select class="days" name="days"></select>
+                    <br/>
+                    은행 <select class="bname" name="bank" >
+                        <option value="sinhan">신한은행</option>
+                        <option value="kakao">카카오</option>
+                    </select>
+                    <br/>
+                        내용 <input type="text" class="meony_n">
+                   <br/>             
+                        금액 <input type="text" class="money">
+                        <input type="radio" name="money" value="get">수입
+                        <input type="radio" name="money" value="out">지출
+                   <br/>            
+                       카테고리 <select class="js-example-tokenizer form-control" name="categori">
+                        <option value="food">식비</option>
+                        <option value="clothing">의류</option>
+                        <option value="habby">취미</option>
+                        <option value="exercise">운동</option>
+                        <option value="medical">의료비</option>
+                        <option value="life">생활비</option>
+                        <option value="insurance">보험비</option>
+                        <option value="month">월세</option>
+                        <option value="transfortation">교통비</option>
+                    </select>                 
+                </form>
+            </div>
+            <div class="barea">
+                <a href="#">
+                    <p class="addbt">추가하기</p>
+                </a>    
+                <a href="#">
+                    <p class="closebt">CLOSE</p>
+                </a>
+            </div>
+        </div>
+        </div>
+        
+        <div class="madal_layer hide"></div>
+                    
+        
         <div id="wrap">
         <header>
             <div class="area">
@@ -95,6 +147,7 @@
                         <img class="pbt" src="img/listpbt.png">
                     </a>
                     </div>
+                    
                 </div>
             <img class="sasunm" src="img/sasunm">
             <div class="whiteback"></div>
@@ -117,4 +170,33 @@
             </div>
         </footer>
         </div>
+        <script type="text/javascript">
+            $(".js-example-tokenizer").select2({
+            tags: true,
+            tokenSeparators: [',', ' ']
+            })
+            
+            $('.pbt').on('click',function(){
+               $('.madal_layer').removeClass('hide');
+               $('.modal').removeClass('hide');
+            });
+            
+            $('.closebt').on('click',function(){
+               $('.madal_layer').addClass('hide');
+               $('.modal').addClass('hide');
+            });
+            
+            $(document).ready(function(){     
+                for (var i = 2021; i<=3500; i++) {
+                    $('.years').append(new Option(i));
+                }
+                for (var i = 1; i<=12; i++) {
+                    $('.months').append(new Option(i));
+                }
+                for (var i =1; i<=31; i++) {
+                    $('.days').append(new Option(i));
+                }
+            });
+        </script>
     </body>
+</html>
