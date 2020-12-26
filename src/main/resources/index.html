@@ -31,8 +31,10 @@
                     <a href="#">
                         <img class="leftbt leftbt1" src="img/main_leftbt.png">
                     </a>
-                    <p class="bank">신한</p>
-                    <h2>100,000</h2>
+                    <p class="bank" th:if="${assetList.empty}">-</p>
+                    <p class="bank" th:if="${!assetList.empty}" th:text="${assetList[0].assetName}"></p>
+                    <h2 th:if="${assetList.empty}">0</h2>
+                    <h2 th:if="${!assetList.empty}" th:text="${assetList[0].account}"></h2>
                     <a href="#">
                         <img class="rightbt rightbt1"
                              src="img/main_rightbt.png">
@@ -49,8 +51,11 @@
                     <a  href="#">
                         <img class="leftbt leftbt2" src="img/main_leftbbt.png">
                     </a>
-                    <p class="bij">Borrowed money</p>
-                    <h2>100</h2>
+                    <p class="bij" th:if="${debtList.empty}">-</p>
+                    <p class="bij" th:if="${!debtList.empty}" th:text="${debtList[0].name}"></p>
+                    <h2 th:if="${debtList.empty}">0</h2>
+                    <h2 th:if="${!debtList.empty and debtList[0].borrowed==0}" th:text="${debtList[0].borrowing}">0</h2>
+                    <h2 th:if="${!debtList.empty and debtList[0].borrowing==0}" th:text="'-' + ${debtList[0].borrowed}">0</h2>
                     <a href="#">
                         <img class="rightbt rightbt2"
                              src="img/main_rightbbt.png">
