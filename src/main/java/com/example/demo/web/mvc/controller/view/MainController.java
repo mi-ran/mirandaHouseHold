@@ -1,5 +1,7 @@
 package com.example.demo.web.mvc.controller.view;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,8 +16,9 @@ public class MainController {
 	 * @return
 	 */
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
-	public String index(Model model) {
-		model.addAttribute("name", "조미란");
+	public String index(HttpSession session, Model model) {
+		String userId = (String)session.getAttribute("LOGIN_ID");
+		model.addAttribute("name", userId);
 		return "index.html";
 	}
 }
