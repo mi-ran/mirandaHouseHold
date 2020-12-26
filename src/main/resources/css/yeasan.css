@@ -1,11 +1,5 @@
 @charset "utf-8";
 @font-face {
-    font-family: 'timonsori';
-    src: url('../font/TmonMonsori.ttf');
-    font-style: normal;
-    font-weight: normal;
-}
-@font-face {
     font-family: 'sandol';
     src:url('../font/AppleSDGothicNeoR.ttf');
 }
@@ -14,9 +8,6 @@
 h2,p,h3,h4,th,tr {
     font-family: 'sandol';
     color: '1c1c1c';
-}
-.janaeck,.won,.jnumber,.jwon,.snumber,.swon {
-    font-family: 'timonsori';
 }
 h2 {
     font-size: 80px;
@@ -35,6 +26,7 @@ body {
     height: auto;
     position: relative;
     text-align: center;
+    margin: 0,auto;
 }
 #wrap {
     width: 1920px;
@@ -42,31 +34,36 @@ body {
     overflow: hidden;
     margin: 0 auto;
 }
-.area,.marea,.narea1,.narea2,.middlebt,.pyo,.footerarea {
+.area,.marea,.narea0,.narea1,.narea2,.middlebt,.pyo,.footerarea {
     transform: skewY(7deg);
 }
+/*header*/
 header {
     transform: skewY(-7deg);
     width: 1920px;
-    height: 200px;
+    height: 400px;
+    background-color: #8fc7b8;
+    margin-top: -200px;
+    padding-top: 200px;
 }
-/*marea*/
+/*middle*/
 .middle {
     width: 1920px;
     height: auto;
-    background-color: #8fc7b8;
+    background-color: white;
     padding-top: 50px;
     margin-top: -5px;
     position: relative;
     transform: skewY(-7deg);
 }
+/*marea*/
 .marea {
     width: 100%;
     height: 200px;
     overflow: hidden;
 }
 .user,.logoutbt,.mbt1,.mbt2,.mbt3 {
-    color: white;
+    color: #1c1c1c;
 }
 .user,.logoutbt {
     float: right;
@@ -82,81 +79,71 @@ header {
     line-height: 50px;
 }
 .logoutbt:hover {
+    color: white;
     background-color: #141414;
 }
 .mbt1,.mbt2,.mbt3 {
     float: left;
     display: inline-block;
     margin-top: 50px;
-    margin-left: 100px;
+    margin-left: 70px;
     width: 85px;
     height: 50px;
     line-height: 50px;
 }
 .mbt1:hover,.mbt2:hover,.mbt3:hover {
+    color: white;
     background-color: #141414;
 }
 .mbt1 {
     margin-left: 760px;
 }
-/*narea1*/
-.narea1 {
+/*narea0*/
+.narea0 {
     width: 1920px;
-    height: 300px;
+    height: 100px;
     overflow: hidden;
 }
-.bankm {
-    margin-bottom: 50px;
-}
 .leftbt,.rightbt {
-    width: 50px;
-    height: auto;
+    width: auto;
+    height: 100px;
 }
 .leftbt {
     float: left;
-    margin-left: 300px;
+    margin-left: 750px;
 }
 .rightbt {
     float: right;
-    margin-right: 300px;
+    margin-right: 750px;
 }
-.janaeck,.won {
+.narea0 h3 {
+    font-size: 60px;
     display: inline-block;
+    position: absolute;
+    right: 50%;
+    margin-right: -50px;
 }
-
-/*narea2*/
-.narea2 {
-    width: 1920px;
+/*narea1*/
+.narea1 {
     overflow: hidden;
-    height: 250px;
+    margin-top: 50px;
 }
-.month {
-    margin-bottom: 50px;
-}
-.jichul {
-    float: left;
-    margin-left: 600px;
-}
-.suib {
-    float: right;
-    margin-right: 600px;
-}
-.jnumber,.jwon,.snumber,.swon {
+#piechart {
     display: inline-block;
+    float: left;
+    margin-left: 230px;
 }
-.totals,.totalj {
-    margin-bottom: 20px;
+#columnchart_material {
+    display: inline-block;
+    float: right;
+    margin-right: 230px;
 }
-
 /*middlebt*/
 .middlebt {
     width: 1920px;
     height: 50px;
     line-height: 50px;
     background-color: #4a4a4a;
-}
-.middlebt h4 {
-    color: white;
 }
 
 /*pyo*/
