@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="kr">
+    <head>
+        <meta charset="utf-8"/>
+        <title>가계부</title>
+        <link rel="stylesheet" type="text/css" href="css/yeasan.css">
+        
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+          google.charts.load('current', {'packages':['corechart']});
+          google.charts.setOnLoadCallback(drawChart);
+
+          function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+              ['Task', 'Hours per Day'],
+              ['Work',     11],
+              ['Eat',      2],
+              ['Commute',  2],
+              ['Watch TV', 2],
+              ['Sleep',    7]
+            ]);
+
+            var options = {
+              title: 'My Daily Activities'
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+            chart.draw(data, options);
+          }
+        </script>
+        
+        <script type="text/javascript">
+          google.charts.load('current', {'packages':['bar']});
+          google.charts.setOnLoadCallback(drawChart);
+
+          function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+              ['Year', 'Sales'],
+          ['2014', 1000],
+          ['2015', 1170],
+          ['2016', 660],
+          ['2017', 1030]
+            ]);
+
+            var options = {
+              chart: {
+                title: 'Company Performance',
+                subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+              }
+            };
+
+            var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+            chart.draw(data, google.charts.Bar.convertOptions(options));
+          }
+        </script>
+    </head>
+    <body>
+        <div id="wrap">
+        <header>
+            <div class="area">
+                <h1 class="logo">
+                <a href="index.html" target="_self">
+                    <img src="img/logo2.png" alt="M&C's HouseHold">
+                </a>
+                </h1>
+            </div>
+            <img class="sasunb" src="img/sasunb">
+        </header>
+        
+        <div class="middle">
+                <div class="marea">
+                    <p class="user">누구누구 님</p>
+                    <a class="logoutbt" href="#"><div class="logout"><p>로그아웃</p></div></a>
+                    <a href="#">
+                        <div class="mbt1">
+                            <h4>내역</h4>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="mbt2">
+                            <h4>예산</h4>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="mbt3">
+                            <h4>그래프</h4>
+                        </div>
+                    </a>
+                </div>
+            
+                <div class="narea0">
+                    <a href="#">
+                        <img class="leftbt" src="img/menu2_leftbt.png">
+                    </a>
+                    <h3>10월</h3>
+                    <a href="#">
+                        <img class="rightbt" src="img/menu2_rightbt.png">
+                    </a>
+                </div>
+                
+                <div class="narea1">
+                    <div id="piechart" style="width: 900px; height: 500px;"></div>
+                
+                    <div id="columnchart_material" style="width: 550px; height: 450px;"></div>
+                </div>
+                
+                <div class="middlebt"></div>
+                
+                <div class="pyo">
+                    <div class="parea">
+                    <table class="pyos" border="0">
+                        <th class="p1">날짜</th>
+                        <th class="p2">내용</th>
+                        <th class="p3">수입</th>
+                        <th class="p4">지출</th>
+                        <th class="p5">잔액</th>
+                        <th class="p6">카테고리</th>
+                        <tr>
+                            <td>12.1</td>
+                            <td>12월 급여</td>
+                            <td>4,000,000</td>
+                            <td></td>
+                            <td>4,000,000</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                    <a href="#">
+                        <img class="pbt" src="img/listpbt.png">
+                    </a>
+                    </div>
+                </div>
+            <img class="sasunm" src="img/sasunm">
+            <div class="whiteback"></div>
+        </div>
+        
+        <footer>
+            <div class="gigi">
+            <div class="footerarea">
+            <a class="flogo" href="#">
+                <img src="img/logo1.png" alt="logo">
+            </a>
+            <a class="map" href="#">
+                <p class="jp">자산</p>
+            </a>
+            <a class="map" href="#">
+                <p class="gp">Give & Take</p>
+            </a>
+            <p class="copy">Copyright 2020.Chanmi.All right reserved</p>
+            </div>
+            </div>
+        </footer>
+        </div>
+    </body>
+</html>
