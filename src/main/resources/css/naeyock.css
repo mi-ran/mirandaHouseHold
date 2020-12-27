@@ -99,6 +99,9 @@ header {
 .mbt1 {
     margin-left: 760px;
 }
+.mbt1 a,.mbt2 a,.mbt3 a {
+    color: white;
+}
 /*narea1*/
 .narea1 {
     width: 1920px;

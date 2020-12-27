@@ -12,7 +12,13 @@
 /*pc*/
 body {
     position: relative;
-    overflow: hidden;
+    overflow: hidden; 
+    text-align: center;
+}
+.wrap {
+    width: 1920px;
+    height: auto;
+    margin: 0 auto;
 }
 header {
     width: 100%;
