@@ -1,8 +1,14 @@
-var index = {
+var assetIndex = 0;
+var debtIndex = 0;
+
+var index = {		
 		init : function() {
 			var _this = this;
 			$('.logoutbt').on('click', function () {
-				_this.doLogin();
+				_this.logout();
+			});
+			$('.jasanarea').on('click', function() {
+				_this.goAssetView();
 			});
             $('.plus1').on('click',function(){
                $('.madal_layer').show();
@@ -13,7 +19,7 @@ var index = {
                $('.modal').hide();
             });
 		},
-		doLogin : function() {
+		logout : function() {
 			$.ajax({
 				type: 'GET',
 				url: '/logout',
@@ -24,6 +30,17 @@ var index = {
 			}).fail(function (error) {
 				alert(error);
 			});
+		},
+		goAssetView : function() {
+			var assetList = $('#assetList');
+			var urlVar = '/assetView?assetId=';
+			if (assetList.length == 0) {
+				urlVar = urlVar + '-1';
+			} else {
+				urlVar = urlVar + assetList[assetIndex].id;
+			}
+			
+			window.location.href=urlVar;
 		}
 };
 
