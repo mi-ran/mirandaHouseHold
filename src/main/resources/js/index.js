@@ -33,17 +33,14 @@ var index = {
 		},
 		goAssetView : function() {
 			var assetList = $('#assetList');
-			alert(assetList[0]);
-			$.ajax({
-				type: 'GET',
-				url: '/assetView?assetId=',
-				dataType: 'json',
-				contentType: 'application/json; charset=utf-8',
-			}).done(function(result) {
-				window.location.href="login";
-			}).fail(function (error) {
-				alert(error);
-			});
+			var urlVar = '/assetView?assetId=';
+			if (assetList.length == 0) {
+				urlVar = urlVar + '-1';
+			} else {
+				urlVar = urlVar + assetList[assetIndex].id;
+			}
+			
+			window.location.href=urlVar;
 		}
 };
 

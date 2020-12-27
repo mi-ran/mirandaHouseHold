@@ -17,8 +17,8 @@ public class AssetViewController {
 	@RequestMapping(value = "/assetView", method = RequestMethod.GET)
 	public String assetView(HttpSession session, Model model, @RequestParam(defaultValue = "") String assetId) {
 		String userId = (String)session.getAttribute("LOGIN_ID");
-		
 		model.addAttribute("name", userId);
+		
 		return "naeyuck.html";
 	}
 }
