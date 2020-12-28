@@ -116,6 +116,11 @@
         </div>                       
                                      
         <input type="hidden" id="assetList" th:value="${assetList}"/>
+        <script th:inline="javascript">
+        	/*<![CDATA[*/
+        	var assetList = /*[[ ${assetList} ]]*/;
+        	/*]]>*/
+        </script>
         <script type="text/javascript" src="js/index.js"></script>
     </body>
 </html>

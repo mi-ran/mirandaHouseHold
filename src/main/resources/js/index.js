@@ -32,7 +32,7 @@ var index = {
 			});
 		},
 		goAssetView : function() {
-			var assetList = $('#assetList');
+			
 			var urlVar = '/assetView?assetId=';
 			if (assetList.length == 0) {
 				urlVar = urlVar + '-1';
