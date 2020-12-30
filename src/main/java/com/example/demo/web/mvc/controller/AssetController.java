@@ -41,8 +41,9 @@ public class AssetController {
 	
 	@ResponseBody
 	@RequestMapping(value = "/", method = RequestMethod.PUT)
-	public void insertAsset(@PathVariable String userId, @RequestBody Asset asset) {
-		assetRepository.count();
-		//assetRepository.
+	public boolean insertAsset(@PathVariable String userId, @RequestBody Asset asset) {
+		System.out.println("성공");
+		assetRepository.save(asset);
+		return true;
 	}
 }
