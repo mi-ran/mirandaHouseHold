@@ -18,10 +18,12 @@ var index = {
                $('.madal_layer').hide();
                $('.modal').hide();
             });
-
 			$('.logoutbt').on('click', function () {
 				_this.doLogin();
 			});
+            $('.addbt').on('click', function() {
+            	_this.addAsset();
+            });
 		},
 		logout : function() {
 			$.ajax({
@@ -45,6 +47,26 @@ var index = {
 			}
 			
 			window.location.href=urlVar;
+		},
+		addAsset : function() {
+			var data = {
+				"assetName" : $('.bank_name').val(),
+				"account" : $('.money').val(),
+				"userId" : userId
+			};
+			
+        	$.ajax({
+				type: 'PUT',
+				url: '/asset/' + userId + '/',
+				dataType: 'json',
+				contentType: 'application/json; charset=utf-8',
+				data : JSON.stringify(data),
+			}).done(function(result) {
+				alert("SUCESS")
+				window.location.href="main";
+			}).fail(function (error) {
+				alert(error);
+			});
 		}
 };
 
