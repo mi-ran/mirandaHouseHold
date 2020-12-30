@@ -1,38 +1,31 @@
 @charset "utf-8";
-@font-face {
-    font-family: 'timonsori';
-    src: url('../font/TmonMonsori.ttf');
-    font-style: normal;
-    font-weight: normal;
-}
 /*reset*/
 * {
-    margin: 0; padding: 0; text-decoration: none;
+    margin: 0; padding: 0; text-decoration: none; text-align: center;
 }
 /*pc*/
 body {
     position: relative;
-    overflow: hidden; 
-    text-align: center;
+    width: 100%;
 }
 .wrap {
+    overflow: hidden; 
     width: 1920px;
     height: auto;
     margin: 0 auto;
 }
 header {
-    width: 100%;
+    width: 1920px;
     height: auto;
     background-color: #8fc7b8;
     transform: skewY(-5deg);
-    margin-top: -75px;
+    margin-top: -85px;
 }
 .textarea {
     display: inline-block;
-    width: 100%;
+    width: 1920px;
     height: auto;
     transform: skewY(5deg);
-    text-align: center;
     margin-top: 200px;
     margin-bottom: 200px;
 }
@@ -40,14 +33,12 @@ header {
     margin-bottom: -5px;
 }
 .loginarea {
-    width: 100%;
-    height: 200px;
     position: relative;
-}
-.idd1 {
-    position: absolute;
-    top: 50px;
-    right: 200px;
+    width: 600px;
+    height: 200px;
+    float: right;
+    margin-right: 50px;
+    margin-top: 40px;
 }
 .id {
     width: 300px;
@@ -56,14 +47,18 @@ header {
     border-radius: 5px;
     box-shadow: -5px -2px 4px 1px #d6d6d6 inset;
 }
+.idd1 {
+    float: right;
+    margin-right: 90px;
+}
 .idd1 p {
     display: inline-block;
     margin-right: 20px;
 }
 .pw1 {
-    position: absolute;
-    top: 110px;
-    right: 200px;
+    float: right;
+    margin-right: 90px;
+    margin-top: 10px;
 }
 .pw {
     width: 300px;
@@ -78,8 +73,7 @@ header {
 }
 .loginbt {
     position: absolute;
-    top: 50px;
-    right: 110px;
+    right: 0;
 }
 .lgbt {
     width: 80px;

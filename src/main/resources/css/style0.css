@@ -26,8 +26,6 @@ p {
     line-height: 120%;
 }
 .body {
-    width: 100%;
-    height: auto;
     position: relative;
     overflow: hidden;
 }
@@ -42,7 +40,7 @@ p {
 }
 /*pc header*/
 header {
-    width: 100%;
+    width: 1920px;
     height: 250px;
     position: relative;
     overflow: hidden;
@@ -297,8 +295,4 @@ select {
 .years {
     width: 120px;
     padding: 5px;
-}
-
-.hide {
-    display: none;
 }

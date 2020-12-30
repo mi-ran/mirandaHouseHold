@@ -18,6 +18,10 @@ var index = {
                $('.madal_layer').hide();
                $('.modal').hide();
             });
+
+			$('.logoutbt').on('click', function () {
+				_this.doLogin();
+			});
 		},
 		logout : function() {
 			$.ajax({
@@ -46,14 +50,17 @@ var index = {
 
 index.init();
     
-            $(document).ready(function(){     
-                for (var i = 2021; i<=3500; i++) {
-                    $('.years').append(new Option(i));
-                }
-                for (var i = 1; i<=12; i++) {
-                    $('.months').append(new Option(i));
-                }
-                for (var i =1; i<=31; i++) {
-                    $('.days').append(new Option(i));
-                }
-            });
+$(document).ready(function(){     
+    for (var i = 2021; i<=3500; i++) {
+        $('.years').append(new Option(i));
+    }
+    for (var i = 1; i<=12; i++) {
+        $('.months').append(new Option(i));
+    }
+    for (var i =1; i<=31; i++) {
+        $('.days').append(new Option(i));
+    }
+                
+    $('.madal_layer').hide();
+    $('.modal').hide();            
+});
