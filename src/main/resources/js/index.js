@@ -76,14 +76,16 @@ var index = {
 			if (assetIndex == assetList.length) {
 				assetIndex = 0;
 			}
+			var account = assetList[assetIndex].account.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 			$('.bank').text(assetList[assetIndex].assetName);
-			$('.assetAccount').text(assetList[assetIndex].account);
+			$('.assetAccount').text(account);
 		},
 		showAgoAsset : function() {
 			assetIndex = assetIndex - 1;
 			if (assetIndex == -1) {
 				assetIndex = assetList.length - 1;
 			}
+			var account = assetList[assetIndex].account.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 			$('.bank').text(assetList[assetIndex].assetName);
 			$('.assetAccount').text(assetList[assetIndex].account);
 		}

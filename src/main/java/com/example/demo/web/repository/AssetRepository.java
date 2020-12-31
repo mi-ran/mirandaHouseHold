@@ -7,18 +7,10 @@ import org.springframework.data.elasticsearch.repository.ElasticsearchCrudReposi
 
 import com.example.demo.web.mvc.model.Asset;
 
-public interface AssetRepository extends ElasticsearchCrudRepository<Asset, Integer> {
+public interface AssetRepository extends ElasticsearchCrudRepository<Asset, String> {
 	@Query("{\"match\":{"
 			+ "\"userId\": {"
 			+ "\"query\": \"?0\"}}}")
 	List<Asset> findByUserId(String userId);
-	
-	@Query("{\"bool\": {"
-			+ "\"must\": ["
-			+ "{\"match\": {\"userId\":\"?0\"}},"
-			+ "{\"match\": {\"id\":\"?1\"}}"
-			+ "]}"
-			+ "}")
-	Asset findByUserIdAndAssetId(String userId, int assetId);
 	
 }
