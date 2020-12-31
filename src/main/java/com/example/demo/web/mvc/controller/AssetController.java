@@ -32,7 +32,7 @@ public class AssetController {
 	}
 	
 	@RequestMapping(value = "/{assetId}", method = RequestMethod.GET)
-	public Map<String, Object> getAsset(@PathVariable String userId, @PathVariable int assetId) {
+	public Map<String, Object> getAsset(@PathVariable String userId, @PathVariable String assetId) {
 		Map<String, Object> result = new HashMap();
 		Asset asset = assetRepository.findByUserIdAndAssetId(userId, assetId);
 		result.put("asset", asset);

@@ -86,11 +86,11 @@
                 </div>
                 
                 <div class="narea1">
-                    <h4 class="bankm">신한은행</h4>
+                    <h4 class="bankm" th:text="${asset.assetName}"></h4>
                     <a href="#">
                         <img class="leftbt" src="img/menu1_leftbt.png">
                     </a>
-                    <h2 class="janaeck">1,000,000</h2>
+                    <h2 class="janaeck" th:text="${#numbers.formatInteger(asset.account, 0, 'COMMA')}"></h2>
                     <p class="won">원</p>
                     <a href="#">
                         <img class="rightbt" src="img/menu1_rightbt.png">
@@ -164,6 +164,13 @@
             </div>
         </footer>
         </div>
+        
+        <script th:inline="javascript">
+        	/*<![CDATA[*/
+        	var userId = /*[[ ${name} ]]*/
+        	/*]]>*/
+        </script>
+        
         <script type="text/javascript" src="js/asset.js">
             $(".js-example-tokenizer").select2({
             tags: true,
