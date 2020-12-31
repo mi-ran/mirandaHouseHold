@@ -7,7 +7,7 @@ var index = {
 			$('.logoutbt').on('click', function () {
 				_this.logout();
 			});
-			$('.jasanarea').on('click', function() {
+			$('.bank').on('click', function() {
 				_this.goAssetView();
 			});
             $('.plus1').on('click',function(){
@@ -18,11 +18,14 @@ var index = {
                $('.madal_layer').hide();
                $('.modal').hide();
             });
-			$('.logoutbt').on('click', function () {
-				_this.doLogin();
-			});
             $('.addbt').on('click', function() {
             	_this.addAsset();
+            });
+            $('.leftbt1').on('click', function() {
+            	_this.showAgoAsset();
+            });
+            $('.rightbt1').on('click', function() {
+            	_this.showNextAsset();
             });
 		},
 		logout : function() {
@@ -67,6 +70,22 @@ var index = {
 			}).fail(function (error) {
 				alert(error);
 			});
+		},
+		showNextAsset : function() {
+			assetIndex = assetIndex + 1;
+			if (assetIndex == assetList.length) {
+				assetIndex = 0;
+			}
+			$('.bank').text(assetList[assetIndex].assetName);
+			$('.assetAccount').text(assetList[assetIndex].account);
+		},
+		showAgoAsset : function() {
+			assetIndex = assetIndex - 1;
+			if (assetIndex == -1) {
+				assetIndex = assetList.length - 1;
+			}
+			$('.bank').text(assetList[assetIndex].assetName);
+			$('.assetAccount').text(assetList[assetIndex].account);
 		}
 };
 

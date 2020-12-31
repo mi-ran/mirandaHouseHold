@@ -62,8 +62,8 @@
                     </a>
                     <p class="bank" th:if="${assetList.empty}">-</p>
                     <p class="bank" th:if="${!assetList.empty}" th:text="${assetList[0].assetName}"></p>
-                    <h2 th:if="${assetList.empty}">0</h2>
-                    <h2 th:if="${!assetList.empty}" th:text="${assetList[0].account}"></h2>
+                    <h2 class="assetAccount" th:if="${assetList.empty}">0</h2>
+                    <h2 class="assetAccount" th:if="${!assetList.empty}" th:text="${assetList[0].account}"></h2>
                     <a href="#">
                         <img class="rightbt rightbt1"
                              src="img/main_rightbt.png">
