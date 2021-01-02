@@ -41,7 +41,7 @@ public class RecordController {
 	// 자산Id로 검색해서 전체 record를 조회 
 	// TODO 날짜 검색, displayCount
 	@RequestMapping(value = "/{assetId}", method = RequestMethod.GET)
-	public Map<String, Object> getRecordsByAsset(@PathVariable String userId, @PathVariable int assetId,
+	public Map<String, Object> getRecordsByAsset(@PathVariable String userId, @PathVariable String assetId,
 			@RequestParam("startDate") Date startDate, @RequestParam("endDate") Date endDate)
 	{
 		Map<String, Object> result = new HashMap<>();
@@ -52,7 +52,7 @@ public class RecordController {
 	}
 	
 	@RequestMapping(value = "/{assetId}/{categoryId}", method = RequestMethod.GET)
-	public Map<String, Object> getRecordsByAssetAndCategory(@PathVariable String userId, @PathVariable int assetId, @PathVariable int categoryId,
+	public Map<String, Object> getRecordsByAssetAndCategory(@PathVariable String userId, @PathVariable String assetId, @PathVariable int categoryId,
 			@RequestParam("startDate") Date startDate, @RequestParam("endDate") Date endDate)
 	{
 		Map<String, Object> result = new HashMap<>();
