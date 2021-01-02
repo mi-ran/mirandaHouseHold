@@ -27,6 +27,13 @@ var index = {
             $('.rightbt1').on('click', function() {
             	_this.showNextAsset();
             });
+            
+            $('.logo').on('click',function(){
+                window.location.href="main";
+            });
+            $('.flogo').on('click',function(){
+                window.location.href="main";
+            })
 		},
 		logout : function() {
 			$.ajax({

@@ -23,6 +23,13 @@ var asset = {
 	        $(".addbt").on('click', function() {
 	        	_this.addRecord();
 	        });
+            
+            $('.logo').on('click',function(){
+                window.location.href="main";
+            });
+            $('.flogo').on('click',function(){
+                window.location.href="main";
+            });
 		},
 		logout : function() {
 			$.ajax({
