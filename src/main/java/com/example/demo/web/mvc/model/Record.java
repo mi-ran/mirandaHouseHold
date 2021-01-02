@@ -22,8 +22,8 @@ public class Record {
 	@Id
 	@Field(type=FieldType.Text)
 	private String id;
-	@Field(type=FieldType.Integer)
-	private int assetId;
+	@Field(type=FieldType.Text)
+	private String assetId;
 	@Field(type=FieldType.Text)
 	private String userId;
 	@Field(type = FieldType.Date)
@@ -37,6 +37,6 @@ public class Record {
 	private int import_;  // 수입
 	@Field(type=FieldType.Integer)
 	private int account;  // 잔액
-	@Field(type=FieldType.Integer)
-	private int categoryId; // 카테고리
+	@Field(type=FieldType.Text)
+	private String categoryId; // 카테고리
 }

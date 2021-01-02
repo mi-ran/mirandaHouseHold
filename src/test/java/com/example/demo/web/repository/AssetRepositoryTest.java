@@ -48,10 +48,4 @@ public class AssetRepositoryTest {
 			System.out.println(as);
 		}
 	}
-	
-	@Test
-	public void getByUserIdAndAssetId() {
-		Asset result = assetRepository.findByUserIdAndAssetId("", 0);
-		System.out.println(result);
-	}
 }
