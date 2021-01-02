@@ -23,7 +23,7 @@ public interface RecordRepository extends ElasticsearchCrudRepository<Record, In
 			+ "\"lt\": \"?3\"}}"
 			+ "}"
 			+ "}}")
-	List<Record> findByUserIdAndAssetId(String userId, int assetId, Date startDate, Date endDate);
+	List<Record> findByUserIdAndAssetId(String userId, String assetId, Date startDate, Date endDate);
 	
 	@Query("{\"bool\": {"
 			+ "\"must\": ["
@@ -38,5 +38,5 @@ public interface RecordRepository extends ElasticsearchCrudRepository<Record, In
 			+ "\"lt\": \"?4\"}}"
 			+ "}"
 			+ "}}")
-	List<Record> findByUserIdAndAssetIdAndCategory(String userId, int assetId, int categoryIdx, Date startDate, Date endDate);
+	List<Record> findByUserIdAndAssetIdAndCategory(String userId, String assetId, int categoryIdx, Date startDate, Date endDate);
 }

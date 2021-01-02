@@ -21,8 +21,7 @@
                     일 <select class="days" name="days"></select>
                     <br/>
                     은행 <select class="bname" name="bank" >
-                        <option value="sinhan">신한은행</option>
-                        <option value="kakao">카카오</option>
+                        <option value="sinhan" th:text="${asset.assetName}"></option>
                     </select>
                     <br/>
                         내용 <input type="text" class="meony_n">
@@ -88,7 +87,8 @@
                 </div>
                 
                 <div class="narea2">
-                    <p class="month">12월</p>
+                	<p class="year" th:text="${year}"></p>
+                    <p class="month" th:text="${month}"></p>
                     
                     <div class="jichul">
                         <p class="totalj">총 지출</p>
@@ -118,12 +118,12 @@
                         <th class="p4">지출</th>
                         <th class="p5">카테고리</th>
                         <th class="p6"></th>
-                        <tr>
-                            <td>12.1</td>
-                            <td>12월 급여</td>
-                            <td>4,000,000</td>
-                            <td></td>
-                            <td></td>
+                        <tr th:each="record : ${recordList}">
+                            <td th:text="${record.date}"></td>
+                            <td th:text="${record.about}"></td>
+                            <td th:text="${record.import_}"></td>
+                            <td th:text="${record.spend}"></td>
+                            <td th:text="${record.categoryId}"></td>
                             <td>X</td>
                         </tr>
                     </table>
