@@ -57,7 +57,8 @@ var asset = {
 				contentType: 'application/json; charset=utf-8',
 				data : JSON.stringify(data),
 			}).done(function(result) {
-				alert("SUCESS");
+				var urlVal = '/assetView?assetId=' + assetObj.id;
+				window.location.href=urlVal;
 			}).fail(function (error) {
 				alert(error);
 			});
