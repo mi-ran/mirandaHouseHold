@@ -89,4 +89,7 @@ $(document).ready(function(){
     for (var i =1; i<=31; i++) {
         $('.days').append(new Option(pad(i, 2)));
     }
+    for (var category in categoryList) {
+    	$('.js-example-tokenizer').append(new Option(categoryList[category].name));
+    }
 });
