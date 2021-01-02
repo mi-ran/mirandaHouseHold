@@ -14,22 +14,14 @@
             </div>
             <div class="warea">
                 <form>
-                    년 <select class="years" name="years"></select> 
-                    월 <select class="months" name="months"></select>
-                    일 <select class="days" name="days"></select>
-                    <br/>
                     은행 <input type="text" class="bank_name"> 
                    <br/>             
                     금액 <input type="text" class="money">   
                 </form>
             </div>
             <div class="barea">
-                <a href="#">
                     <p class="addbt">추가하기</p>
-                </a>    
-                <a href="#">
                     <p class="closebt">CLOSE</p>
-                </a>
             </div>
         </div>
         </div>
@@ -57,17 +49,12 @@
                 <h3>자산</h3>
                     <img class="plus plus1" src="img/maun_pbt.png">
                 <div class="jasanarea">
-                    <a href="#">
-                        <img class="leftbt leftbt1" src="img/main_leftbt.png">
-                    </a>
+                    <img class="leftbt leftbt1" src="img/main_leftbt.png">
                     <p class="bank" th:if="${assetList.empty}">-</p>
                     <p class="bank" th:if="${!assetList.empty}" th:text="${assetList[0].assetName}"></p>
                     <h2 class="assetAccount" th:if="${assetList.empty}">0</h2>
                     <h2 class="assetAccount" th:if="${!assetList.empty}" th:text="${#numbers.formatInteger(assetList[0].account, 0, 'COMMA')}"></h2>
-                    <a href="#">
-                        <img class="rightbt rightbt1"
-                             src="img/main_rightbt.png">
-                    </a>
+                        <img class="rightbt rightbt1" src="img/main_rightbt.png">
                 </div>
             </div>
             
@@ -77,18 +64,14 @@
                     <img class="plus plus2" src="img/maun_pbt.png">
                 </a>
                 <div class="gtarea">
-                    <a  href="#">
                         <img class="leftbt leftbt2" src="img/main_leftbbt.png">
-                    </a>
                     <p class="bij" th:if="${debtList.empty}">-</p>
                     <p class="bij" th:if="${!debtList.empty}" th:text="${debtList[0].name}"></p>
                     <h2 th:if="${debtList.empty}">0</h2>
                     <h2 th:if="${!debtList.empty and debtList[0].borrowed==0}" th:text="${debtList[0].borrowing}">0</h2>
                     <h2 th:if="${!debtList.empty and debtList[0].borrowing==0}" th:text="'-' + ${debtList[0].borrowed}">0</h2>
-                    <a href="#">
                         <img class="rightbt rightbt2"
                              src="img/main_rightbbt.png">
-                    </a>
                 </div>
             </div>
         </div>

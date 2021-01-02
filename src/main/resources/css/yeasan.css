@@ -156,9 +156,9 @@ header {
 }
 .parea {
     padding-top: 50px;
-    width: 1820px;
+    width: 1760px;
     height: auto;
-    margin-left: 50px;
+    margin: 0 auto;
     position: relative;
 }
 .pyos th {
@@ -178,16 +178,16 @@ header {
     border-right: none;
 }
 .p1 {
-    width: 65px;
+    width: 55px;
 }
 .p2 {
-    width: 850px;
+    width: 840px;
 }
 .p3,.p4,.p5 {
-    width: 250px;
+    width: 240px;
 }
 .p6 {
-    width: 150px;
+    width: 140px;
 }
 .pbt {
     width: 80px;
