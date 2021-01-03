@@ -18,6 +18,14 @@ var index = {
                $('.madal_layer').hide();
                $('.modal').hide();
             });
+            $('.plus2').on('click',function(){
+                $('.madal_layer').show();
+                $('.modal2').show();
+            });
+            $('.closebt2').on('click',function(){
+               $('.madal_layer').hide();
+               $('.modal2').hide();
+            });
             $('.addbt').on('click', function() {
             	_this.addAsset();
             });
@@ -112,5 +120,6 @@ $(document).ready(function(){
     }
                 
     $('.madal_layer').hide();
-    $('.modal').hide();            
+    $('.modal').hide();   
+    $('.modal2').hide();
 });

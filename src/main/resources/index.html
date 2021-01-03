@@ -26,6 +26,32 @@
         </div>
         </div>
         
+        <div class="modal2">
+        <div class="modal2_contants">
+            <div class="minarea">
+                <img src="img/logo2.png">
+            </div>
+            <div class="warea">
+                <form>
+                    년 <select class="years" name="years"></select> 
+                    월 <select class="months" name="months"></select>
+                    일 <select class="days" name="days"></select>
+                    <br/>     
+                    이름 <input type="text" class="name">
+                    <br/>
+                    <input type="radio" name="money" value="give">GIVE
+                    <input type="radio" name="money" value="take">TAKE
+                    <br/>
+                    금액 <input type="text" class="money">   
+                </form>
+            </div>
+            <div class="barea">
+                    <p class="addbt2">추가하기</p>
+                    <p class="closebt2">CLOSE</p>
+            </div>
+        </div>
+        </div>
+        
         <div class="madal_layer"></div>
         
         
@@ -60,9 +86,7 @@
             
             <div class="givetake">
                 <h3>Give & Take</h3>
-                <a href="" target="_self">
-                    <img class="plus plus2" src="img/maun_pbt.png">
-                </a>
+                <img class="plus plus2" src="img/maun_pbt.png">
                 <div class="gtarea">
                         <img class="leftbt leftbt2" src="img/main_leftbbt.png">
                     <p class="bij" th:if="${debtList.empty}">-</p>
