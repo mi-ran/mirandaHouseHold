@@ -284,6 +284,17 @@ select {
     width: 415px;
     padding: 4.5px;
 }
+/*modal2*/
+.modal2 {
+    width: 600px;
+    height: auto;
+    background-color: white;
+    position: fixed;
+    top: 20%;
+    right: 50%;
+    margin-right: -300px;
+    z-index: 3;
+}
 .months {
     width: 120px;
     padding: 5px;
@@ -295,4 +306,20 @@ select {
 .years {
     width: 120px;
     padding: 5px;
+}
+select {
+    width: 400px;
+    padding: 0px;
+}
+.money,.name {
+    width: 300px;
+    padding: 5px;
+}
+.addbt2 {
+    float: left;
+    margin-left: 20px;
+}
+.closebt2 {
+    float: right;
+    margin-right: 20px;
 }
