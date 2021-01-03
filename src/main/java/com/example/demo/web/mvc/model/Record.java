@@ -27,7 +27,7 @@ public class Record {
 	@Field(type=FieldType.Text)
 	private String userId;
 	@Field(type = FieldType.Date)
-    @JsonFormat(shape = JsonFormat.Shape.STRING)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern="yyyy-MM-dd")
 	private Date date;
 	@Field(type=FieldType.Text)
 	private String about; // 내용

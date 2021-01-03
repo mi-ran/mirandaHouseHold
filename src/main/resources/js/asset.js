@@ -30,6 +30,7 @@ var asset = {
             $('.flogo').on('click',function(){
                 window.location.href="main";
             });
+            _this.setTotal();
 		},
 		logout : function() {
 			$.ajax({
@@ -69,6 +70,16 @@ var asset = {
 			}).fail(function (error) {
 				alert(error);
 			});
+		},
+		setTotal : function() {
+			var totalSpend = 0;
+			var totalImport = 0;
+			for (var r in recordList) {
+				totalSpend = totalSpend + recordList[r].spend;
+				totalImport = totalImport + recordList[r].import_;
+			}
+			$('.jnumber').text(totalSpend);
+			$('.snumber').text(totalImport);
 		}
 };
 
