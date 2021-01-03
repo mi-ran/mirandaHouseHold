@@ -53,13 +53,16 @@ public class AssetViewController {
 	 * 자산 뷰를 리턴한다.
 	 */
 	@RequestMapping(value = "/assetView", method = RequestMethod.GET)
-	public String assetView(HttpSession session, Model model, @RequestParam(defaultValue = "") String assetId) {
+	public String assetView(HttpSession session, Model model, @RequestParam(defaultValue = "") String assetId, @RequestParam(defaultValue = "-1") int year, @RequestParam(defaultValue = "-1")int month) {
 		String userId = (String)session.getAttribute("LOGIN_ID");
 		Optional<Asset> asset = assetRepository.findById(assetId);
 		List<Category> cateList = categoryRepository.findByUserId(userId);
 		
-		Date startDate = new GregorianCalendar(getTodayYear(), getTodayMonth(), 1).getTime();
-		Date endDate = new GregorianCalendar(getTodayYear(), getTodayMonth() + 1, 1).getTime();
+		int yearVal = year == -1 ? getTodayYear() : year;
+		int monthVal = month == -1 ? getTodayMonth() : month - 1;
+		
+		Date startDate = new GregorianCalendar(yearVal, monthVal, 1).getTime();
+		Date endDate = new GregorianCalendar(yearVal, monthVal + 1, 1).getTime();
 		List<Record> recordList = recordRepository.findByUserIdAndAssetId(userId, assetId, startDate, endDate);
 		
 		for (Record record : recordList) {
@@ -75,8 +78,8 @@ public class AssetViewController {
 		model.addAttribute("asset", asset.get());
 		model.addAttribute("categoryList", cateList);
 		model.addAttribute("recordList", recordList);
-		model.addAttribute("year", getTodayYear());
-		model.addAttribute("month", getTodayMonth() + 1);
+		model.addAttribute("year", yearVal);
+		model.addAttribute("month", monthVal + 1);
 		return "naeyuck.html";
 	}
 }

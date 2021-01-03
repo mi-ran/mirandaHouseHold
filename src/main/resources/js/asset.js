@@ -30,6 +30,13 @@ var asset = {
             $('.flogo').on('click',function(){
                 window.location.href="main";
             });
+            
+            $('.leftbt').on('click', function() {
+            	_this.showAgoMonth();
+            })
+            $('.rightbt').on('click', function() {
+            	_this.showNextMonth();
+            })
             _this.setTotal();
 		},
 		logout : function() {
@@ -80,6 +87,26 @@ var asset = {
 			}
 			$('.jnumber').text(totalSpend);
 			$('.snumber').text(totalImport);
+		},
+		showNextMonth : function() {
+			if (curMonth == 12) {
+				curYear = curYear + 1;
+				curMonth = 1;
+			} else {
+				curMonth = curMonth + 1;
+			}
+			var urlVal = '/assetView?assetId=' + assetObj.id + "&year=" + curYear + "&month=" + curMonth;
+			window.location.href=urlVal;
+		},
+		showAgoMonth : function() {
+			if (curMonth == 1) {
+				curYear = curYear - 1;
+				curMonth = 12;
+			} else {
+				curMonth = curMonth - 1;
+			}
+			var urlVal = '/assetView?assetId=' + assetObj.id + "&year=" + curYear + "&month=" + curMonth;
+			window.location.href=urlVal;
 		}
 };
 
