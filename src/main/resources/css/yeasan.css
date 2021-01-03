@@ -101,7 +101,7 @@ header {
 /*narea0*/
 .narea0 {
     width: 1920px;
-    height: 100px;
+    height: 150px;
     overflow: hidden;
 }
 .leftbt,.rightbt {
@@ -116,12 +116,17 @@ header {
     float: right;
     margin-right: 750px;
 }
+.narea0 p {
+    display: inline-block;
+    margin-top: -20px;
+}
 .narea0 h3 {
     font-size: 60px;
     display: inline-block;
     position: absolute;
     right: 50%;
     margin-right: -50px;
+    margin-top: 20px;
 }
 /*narea1*/
 .narea1 {

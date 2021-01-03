@@ -134,20 +134,24 @@ header {
     height: 250px;
 }
 .month {
-    margin-bottom: 50px;
+    margin-left: 10px;
+    display: inline-block;
     font-size: 30px;
 }
 .year {
-    margin-bottom: 50px;
+    margin-right: 10px;
+    display: inline-block;
     font-size: 30px;
 }
 .jichul {
     float: left;
     margin-left: 600px;
+    margin-top: 60px;
 }
 .suib {
     float: right;
     margin-right: 600px;
+    margin-top: 60px;
 }
 .jnumber,.jwon,.snumber,.swon {
     display: inline-block;
