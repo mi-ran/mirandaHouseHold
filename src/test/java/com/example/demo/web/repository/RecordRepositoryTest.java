@@ -38,7 +38,7 @@ public class RecordRepositoryTest {
 	
 	@Test
 	public void getRecord() {
-		Iterable<Record> result = recordRepository.findByUserIdAndAssetId("", 0, new Date(), new Date());
+		Iterable<Record> result = recordRepository.findByUserIdAndAssetId("", "", new Date(), new Date());
 		for(Record record : result) {
 			System.out.println(record);
 		}
