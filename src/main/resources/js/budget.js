@@ -4,6 +4,21 @@ var budget = {
 			$('.logoutbt').on('click', function () {
 				_this.logout();
 			});
+			$('.logo').on('click',function(){
+	            window.location.href="main";
+	        });
+	        $('.flogo').on('click',function(){
+	            window.location.href="main";
+	        });
+	        $('.mbt1').on('click', function() {
+            	
+            });
+            $('.mbt2').on('click', function() {
+            	window.location.href="budgetView";
+            });
+            $('.mbt3').on('click', function() {
+            	
+            });
 		},
 		logout : function() {
 			$.ajax({

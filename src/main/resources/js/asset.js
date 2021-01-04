@@ -37,6 +37,15 @@ var asset = {
             $('.rightbt').on('click', function() {
             	_this.showNextMonth();
             });
+            $('.mbt1').on('click', function() {
+            	
+            });
+            $('.mbt2').on('click', function() {
+            	window.location.href="budgetView";
+            });
+            $('.mbt3').on('click', function() {
+            	
+            });
             _this.setTotal();
             
             $('.removeRecord').on('click', function() {
