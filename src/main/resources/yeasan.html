@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="kr">
+<html lang="kr" xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="utf-8"/>
         <title>가계부</title>
@@ -117,7 +117,7 @@
         
         <div class="middle">
                 <div class="marea">
-                    <p class="user">누구누구 님</p>
+                    <p class="user" th:text="${name}+'님'"></p>
                     <a class="logoutbt" href="#"><div class="logout"><p>로그아웃</p></div></a>
                     <a href="#">
                         <div class="mbt1">
