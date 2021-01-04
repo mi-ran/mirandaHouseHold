@@ -137,4 +137,30 @@ public class RecordController {
 		return true;
 	}
 	
+	/**
+	 * DELETE
+	 */
+	@ResponseBody
+	@RequestMapping(value = "/", method = RequestMethod.DELETE)
+	public boolean deleteRecord(@PathVariable String userId, @RequestBody String recordId) {
+		// 잔액 수정
+		Optional<Record> optionalRecord = recordRepository.findById(recordId);
+		if (!optionalRecord.isPresent()) {
+			System.out.println(recordId + " : NOT FOUND RECORD");
+			return false;
+		}
+		Record record = optionalRecord.get();
+		
+		Optional<Asset> optionalAsset = assetRepository.findById(record.getAssetId());
+		if (!optionalAsset.isPresent()) {
+			System.out.println(record.getAssetId() + " : NOT FOUND ASSET");
+		}
+		Asset asset = optionalAsset.get();
+		asset.setAccount(asset.getAccount() + record.getSpend() - record.getImport_());
+		assetRepository.save(asset);
+		
+		// 레코드 삭제
+		recordRepository.deleteById(recordId);
+		return true;
+	}
 }
