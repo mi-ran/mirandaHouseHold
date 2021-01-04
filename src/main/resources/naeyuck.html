@@ -111,6 +111,7 @@
                 <div class="pyo">
                     <div class="parea">
                     <table class="pyos" border="0">
+                    	<th style="display: none"></th>
                         <th class="p1">날짜</th>
                         <th class="p2">내용</th>
                         <th class="p3">수입</th>
@@ -118,12 +119,13 @@
                         <th class="p5">카테고리</th>
                         <th class="p6"></th>
                         <tr th:each="record : ${recordList}">
+                        	<td th:text="${record.id}" style="display: none"></td>
                             <td th:text="${record.date}"></td>
                             <td th:text="${record.about}"></td>
                             <td th:text="${record.import_}"></td>
                             <td th:text="${record.spend}"></td>
                             <td th:text="${record.categoryId}"></td>
-                            <td>X</td>
+                            <td> <p class="removeRecord">X</p> </td>
                         </tr>
                     </table>
                     <img class="pbt" src="img/listpbt.png">

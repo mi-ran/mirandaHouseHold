@@ -33,11 +33,30 @@ var asset = {
             
             $('.leftbt').on('click', function() {
             	_this.showAgoMonth();
-            })
+            });
             $('.rightbt').on('click', function() {
             	_this.showNextMonth();
-            })
+            });
             _this.setTotal();
+            
+            $('.removeRecord').on('click', function() {
+            	var tr = $(this).parent().parent();
+    			var recordId = tr.children().eq(0).text();
+            	
+            	$.ajax({
+    				type: 'DELETE',
+    				url: '/record/' + userId + '/',
+    				dataType: 'json',
+    				contentType: 'application/json; charset=utf-8',
+    				data : recordId,
+    			}).done(function(result) {
+    				alert("삭제 되었습니다.");
+    				var urlVal = '/assetView?assetId=' + assetObj.id + "&year=" + curYear + "&month=" + curMonth;
+        			window.location.href=urlVal;
+    			}).fail(function (error) {
+    				alert(error);
+    			});
+            });
 		},
 		logout : function() {
 			$.ajax({

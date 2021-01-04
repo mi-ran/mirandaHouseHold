@@ -8,7 +8,7 @@ import org.springframework.data.elasticsearch.repository.ElasticsearchCrudReposi
 
 import com.example.demo.web.mvc.model.Record;
 
-public interface RecordRepository extends ElasticsearchCrudRepository<Record, Integer>{
+public interface RecordRepository extends ElasticsearchCrudRepository<Record, String>{
 
 	
 	@Query("{\"bool\": {"
