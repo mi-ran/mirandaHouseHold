@@ -37,6 +37,6 @@ public class MvcConfiguration implements WebMvcConfigurer {
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
 		registry.addInterceptor(loginInterceptor)
-		.addPathPatterns("/main", "/assetView");
+		.addPathPatterns("/main", "/assetView", "/budgetView");
 	}
 }

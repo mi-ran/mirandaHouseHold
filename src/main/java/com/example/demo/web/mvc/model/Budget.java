@@ -23,15 +23,17 @@ public class Budget {
 	private String id;
 	@Field(type=FieldType.Text)
 	private String userId;
-	@Field(type = FieldType.Integer)
-	private int assetId;
+	@Field(type = FieldType.Text)
+	private String assetId;
 	@Field(type = FieldType.Date)
     @JsonFormat(shape = JsonFormat.Shape.STRING)
 	private Date date;
 	@Field(type = FieldType.Text)
 	private String about;
 	@Field(type = FieldType.Integer)
-	private int account;
+	private int import_;
 	@Field(type = FieldType.Integer)
-	private int categoryId;
+	private int spend;
+	@Field(type = FieldType.Text)
+	private String categoryId;
 }

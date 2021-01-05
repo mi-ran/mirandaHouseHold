@@ -77,7 +77,7 @@
                         <input type="radio" name="money" value="get">수입
                         <input type="radio" name="money" value="out">지출
                    <br/>            
-                       카테고리 <select class="js-example-tokenizer form-control" name="categori">
+                       카테고리 <select class="js-example-tokenizer form-control" name="category">
                     </select>                 
                 </form>
             </div>
@@ -192,11 +192,20 @@
         </div>
          <script th:inline="javascript">
         	/*<![CDATA[*/
+        	var userId = /*[[ ${name} ]]*/
         	var categoryList = /*[[ ${categoryList} ]]*/
+        	var assetId = /*[[ ${assetId} ]]*/
+        	var curYear = /*[[ ${year} ]]*/
+        	var curMonth = /*[[ ${month} ]]*/
         	/*]]>*/
         </script>
         
         <script type="text/javascript">
+        	function pad(n, width) {
+            	n = n + '';
+            	return n.length >= width ? n : new Array(width - n.length + 1).join('0') + n;
+        	}
+        	
             $(".js-example-tokenizer").select2({
             tags: true,
             tokenSeparators: [',', ' ']
@@ -217,10 +226,10 @@
                     $('.years').append(new Option(i));
                 }
                 for (var i = 1; i<=12; i++) {
-                    $('.months').append(new Option(i));
+                    $('.months').append(new Option(pad(i, 2)));
                 }
                 for (var i =1; i<=31; i++) {
-                    $('.days').append(new Option(i));
+                    $('.days').append(new Option(pad(i, 2)));
                 }
                 for (var category in categoryList) {
                 	$('.js-example-tokenizer').append(new Option(categoryList[category].name));
