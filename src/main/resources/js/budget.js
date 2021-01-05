@@ -14,10 +14,14 @@ var budget = {
             	
             });
             $('.mbt2').on('click', function() {
-            	window.location.href="budgetView";
+            	var urlVal = '/budgetView?assetId=' + assetId + "&year=" + curYear + "&month=" + curMonth;
+    			window.location.href=urlVal;
             });
             $('.mbt3').on('click', function() {
             	
+            });
+            $('.addbt').on('click', function() {
+            	_this.addBugetRecord();
             });
 		},
 		logout : function() {
@@ -28,6 +32,32 @@ var budget = {
 				contentType: 'application/json; charset=utf-8',
 			}).done(function(result) {
 				window.location.href="login";
+			}).fail(function (error) {
+				alert(error);
+			});
+		},
+		addBugetRecord : function() {
+			var spendOrimport = $('input[name=money]:checked').val();
+			var money = $('.money').val();
+			var data = {
+				"assetId" : assetId,
+				"userId" : userId,
+				"date" : $("select[name=years]").val() + '-' + $("select[name=months]").val() + '-' + $("select[name=days]").val(),
+				"about" : $('.meony_n').val(),
+				"spend" : spendOrimport == "out" ? money : 0,
+				"import_" : spendOrimport == "get" ? money : 0,
+				"categoryId" : $("select[name=category]").val()
+			}
+			
+			$.ajax({
+				type: 'PUT',
+				url: '/budget/' + userId + '/',
+				dataType: 'json',
+				contentType: 'application/json; charset=utf-8',
+				data : JSON.stringify(data),
+			}).done(function(result) {
+				var urlVal = '/budgetView?assetId=' + assetId + "&year=" + curYear + "&month=" + curMonth;
+    			window.location.href=urlVal;
 			}).fail(function (error) {
 				alert(error);
 			});

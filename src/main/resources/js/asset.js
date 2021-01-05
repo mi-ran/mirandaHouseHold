@@ -41,7 +41,8 @@ var asset = {
             	
             });
             $('.mbt2').on('click', function() {
-            	window.location.href="budgetView";
+            	var urlVal = '/budgetView?assetId=' + assetObj.id + "&year=" + curYear + "&month=" + curMonth;
+    			window.location.href=urlVal;
             });
             $('.mbt3').on('click', function() {
             	
@@ -100,8 +101,8 @@ var asset = {
 				contentType: 'application/json; charset=utf-8',
 				data : JSON.stringify(data),
 			}).done(function(result) {
-				var urlVal = '/assetView?assetId=' + assetObj.id;
-				window.location.href=urlVal;
+				var urlVal = '/assetView?assetId=' + assetObj.id + "&year=" + curYear + "&month=" + curMonth;
+    			window.location.href=urlVal;
 			}).fail(function (error) {
 				alert(error);
 			});
