@@ -78,15 +78,6 @@
                         <input type="radio" name="money" value="out">지출
                    <br/>            
                        카테고리 <select class="js-example-tokenizer form-control" name="categori">
-                        <option value="food">식비</option>
-                        <option value="clothing">의류</option>
-                        <option value="habby">취미</option>
-                        <option value="exercise">운동</option>
-                        <option value="medical">의료비</option>
-                        <option value="life">생활비</option>
-                        <option value="insurance">보험비</option>
-                        <option value="month">월세</option>
-                        <option value="transfortation">교통비</option>
                     </select>                 
                 </form>
             </div>
@@ -199,6 +190,12 @@
             </div>
         </footer>
         </div>
+         <script th:inline="javascript">
+        	/*<![CDATA[*/
+        	var categoryList = /*[[ ${categoryList} ]]*/
+        	/*]]>*/
+        </script>
+        
         <script type="text/javascript">
             $(".js-example-tokenizer").select2({
             tags: true,
@@ -224,6 +221,9 @@
                 }
                 for (var i =1; i<=31; i++) {
                     $('.days').append(new Option(i));
+                }
+                for (var category in categoryList) {
+                	$('.js-example-tokenizer').append(new Option(categoryList[category].name));
                 }
             });
             
