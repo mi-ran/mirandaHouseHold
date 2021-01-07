@@ -38,7 +38,8 @@ var asset = {
             	_this.showNextMonth();
             });
             $('.mbt1').on('click', function() {
-            	
+            	var urlVal = '/assetView?assetId=' + assetObj.id + "&year=" + curYear + "&month=" + curMonth;
+    			window.location.href=urlVal;
             });
             $('.mbt2').on('click', function() {
             	var urlVal = '/budgetView?assetId=' + assetObj.id + "&year=" + curYear + "&month=" + curMonth;
