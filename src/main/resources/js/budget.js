@@ -24,6 +24,12 @@ var budget = {
             $('.addbt').on('click', function() {
             	_this.addBugetRecord();
             });
+            $('.leftbt').on('click', function() {
+            	_this.showAgoMonth();
+            });
+            $('.rightbt').on('click', function() {
+            	_this.showNextMonth();
+            });
             
             $('.removeRecord').on('click', function() {
             	var tr = $(this).parent().parent();
@@ -81,6 +87,26 @@ var budget = {
 			}).fail(function (error) {
 				alert(error);
 			});
+		},
+		showNextMonth : function() {
+			if (curMonth == 12) {
+				curYear = curYear + 1;
+				curMonth = 1;
+			} else {
+				curMonth = curMonth + 1;
+			}
+			var urlVal = '/budgetView?assetId=' + assetId + "&year=" + curYear + "&month=" + curMonth;
+			window.location.href=urlVal;
+		},
+		showAgoMonth : function() {
+			if (curMonth == 1) {
+				curYear = curYear - 1;
+				curMonth = 12;
+			} else {
+				curMonth = curMonth - 1;
+			}
+			var urlVal = '/budgetView?assetId=' + assetId + "&year=" + curYear + "&month=" + curMonth;
+			window.location.href=urlVal;
 		}
 };
 
