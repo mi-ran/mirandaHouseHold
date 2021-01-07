@@ -26,7 +26,7 @@ public class Budget {
 	@Field(type = FieldType.Text)
 	private String assetId;
 	@Field(type = FieldType.Date)
-    @JsonFormat(shape = JsonFormat.Shape.STRING)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern="yyyy-MM-dd")
 	private Date date;
 	@Field(type = FieldType.Text)
 	private String about;
