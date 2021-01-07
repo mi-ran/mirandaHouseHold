@@ -65,4 +65,14 @@ public class BudgetController {
 		budgetRepository.save(budget);
 		return true;
 	}
+
+	/**
+	 * DELETE
+	 */
+	@ResponseBody
+	@RequestMapping(value = "/", method = RequestMethod.DELETE)
+	public boolean deleteBudget(@PathVariable String userId, @RequestBody String budgetId) {
+		budgetRepository.deleteById(budgetId);
+		return true;
+	}
 }
