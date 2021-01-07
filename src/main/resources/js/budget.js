@@ -24,6 +24,25 @@ var budget = {
             $('.addbt').on('click', function() {
             	_this.addBugetRecord();
             });
+            
+            $('.removeRecord').on('click', function() {
+            	var tr = $(this).parent().parent();
+    			var recordId = tr.children().eq(0).text();
+            	
+            	$.ajax({
+    				type: 'DELETE',
+    				url: '/budget/' + userId + '/',
+    				dataType: 'json',
+    				contentType: 'application/json; charset=utf-8',
+    				data : recordId,
+    			}).done(function(result) {
+    				alert("삭제 되었습니다.");
+    				var urlVal = '/budgetView?assetId=' + assetId + "&year=" + curYear + "&month=" + curMonth;
+        			window.location.href=urlVal;
+    			}).fail(function (error) {
+    				alert(error);
+    			});
+            });
 		},
 		logout : function() {
 			$.ajax({
