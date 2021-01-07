@@ -11,7 +11,8 @@ var budget = {
 	            window.location.href="main";
 	        });
 	        $('.mbt1').on('click', function() {
-            	
+	        	var urlVal = '/assetView?assetId=' + assetId + "&year=" + curYear + "&month=" + curMonth;
+    			window.location.href=urlVal;
             });
             $('.mbt2').on('click', function() {
             	var urlVal = '/budgetView?assetId=' + assetId + "&year=" + curYear + "&month=" + curMonth;
