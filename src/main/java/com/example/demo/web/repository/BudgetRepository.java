@@ -8,7 +8,7 @@ import org.springframework.data.elasticsearch.repository.ElasticsearchCrudReposi
 
 import com.example.demo.web.mvc.model.Budget;
 
-public interface BudgetRepository extends ElasticsearchCrudRepository<Budget, Integer>{
+public interface BudgetRepository extends ElasticsearchCrudRepository<Budget, String>{
 
 	@Query("{\"bool\": {"
 			+ "\"must\": ["
@@ -22,5 +22,5 @@ public interface BudgetRepository extends ElasticsearchCrudRepository<Budget, In
 			+ "\"lt\": \"?3\"}}"
 			+ "}"
 			+ "}}")
-	List<Budget> findByUserIdAndAssetId(String userId, int assetId, Date startDate, Date endDate);
+	List<Budget> findByUserIdAndAssetId(String userId, String assetId, Date startDate, Date endDate);
 }

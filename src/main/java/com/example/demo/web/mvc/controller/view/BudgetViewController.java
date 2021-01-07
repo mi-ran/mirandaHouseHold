@@ -1,5 +1,7 @@
 package com.example.demo.web.mvc.controller.view;
 
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.example.demo.web.mvc.model.Budget;
 import com.example.demo.web.mvc.model.Category;
 import com.example.demo.web.repository.BudgetRepository;
 import com.example.demo.web.repository.CategoryRepository;
@@ -28,11 +31,24 @@ public class BudgetViewController {
 		String userId = (String)session.getAttribute("LOGIN_ID");
 		List<Category> cateList = categoryRepository.findByUserId(userId);
 		
+		Date startDate = new GregorianCalendar(year, month - 1, 1).getTime();
+		Date endDate = new GregorianCalendar(year, month, 1).getTime();
+		List<Budget> budgetList = budgetRepository.findByUserIdAndAssetId(userId, assetId, startDate, endDate);
+		
+		for (Budget budget : budgetList) {
+			for (Category cate : cateList) {
+				if (cate.getId().equals(budget.getCategoryId())) {
+					budget.setCategoryId(cate.getName());
+				}
+			}
+		}
+		
 		model.addAttribute("assetId", assetId);
 		model.addAttribute("year", year);
 		model.addAttribute("month", month);
 		model.addAttribute("categoryList", cateList);
 		model.addAttribute("name", userId);
+		model.addAttribute("budgetRecordList", budgetList);
 		return "yeasan.html";
 	}
 	

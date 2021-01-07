@@ -131,8 +131,8 @@
                     <a href="#">
                         <img class="leftbt" src="img/menu2_leftbt.png">
                     </a>
-                    <p>2021</p>
-                    <h3>01월</h3>
+                    <p class="year" th:text="${year}"></p>
+                    <h3 class="month" th:text="${month} + '월'"></h3>
                     <a href="#">
                         <img class="rightbt" src="img/menu2_rightbt.png">
                     </a>
@@ -149,19 +149,21 @@
                 <div class="pyo">
                     <div class="parea">
                     <table class="pyos" border="0">
+                    	<th style="display: none"></th>
                         <th class="p1">날짜</th>
                         <th class="p2">내용</th>
                         <th class="p3">수입</th>
                         <th class="p4">지출</th>
                         <th class="p5">카테고리</th>
                         <th class="p6"></th>
-                        <tr>
-                            <td>12.1</td>
-                            <td>12월 급여</td>
-                            <td>4,000,000</td>
-                            <td></td>
-                            <td></td>
-                            <td>X</td>
+                        <tr th:each="budgetRecord : ${budgetRecordList}">
+                        	<td th:text="${budgetRecord.id}" style="display: none"></td>
+                        	<td th:text="${budgetRecord.date}"></td>
+                        	<td th:text="${budgetRecord.about}"></td>
+                        	<td th:text="${budgetRecord.import_}"></td>
+                        	<td th:text="${budgetRecord.spend}"></td>
+                        	<td th:text="${budgetRecord.categoryId}"></td>
+                        	<td> <p class="removeRecord">X</p> </td>
                         </tr>
                     </table>
                     <a href="#">

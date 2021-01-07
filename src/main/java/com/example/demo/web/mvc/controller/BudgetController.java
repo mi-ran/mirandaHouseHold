@@ -30,7 +30,7 @@ public class BudgetController {
 	CategoryRepository categoryRepository;
 	
 	@RequestMapping(value = "/{assetId}", method = RequestMethod.GET)
-	public Map<String, Object> getBudget(@PathVariable String userId, @PathVariable int assetId,
+	public Map<String, Object> getBudget(@PathVariable String userId, @PathVariable String assetId,
 			@RequestParam("startDate") Date startDate, @RequestParam("endDate") Date endDate)
 	{
 		Map<String, Object> result = new HashMap<>();
