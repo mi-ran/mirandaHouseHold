@@ -8,56 +8,6 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript">
-          google.charts.load('current', {'packages':['corechart']});
-          google.charts.setOnLoadCallback(drawChart);
-
-          function drawChart() {
-
-            var data = google.visualization.arrayToDataTable([
-              ['Task', 'Hours per Day'],
-              ['Work',     11],
-              ['Eat',      2],
-              ['Commute',  2],
-              ['Watch TV', 2],
-              ['Sleep',    7]
-            ]);
-
-            var options = {
-              title: 'My Daily Activities'
-            };
-
-            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-            chart.draw(data, options);
-          }
-        </script>
-        
-        <script type="text/javascript">
-          google.charts.load('current', {'packages':['bar']});
-          google.charts.setOnLoadCallback(drawChart);
-
-          function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-              ['Year', 'Sales'],
-          ['2014', 1000],
-          ['2015', 1170],
-          ['2016', 660],
-          ['2017', 1030]
-            ]);
-
-            var options = {
-              chart: {
-                title: 'Company Performance',
-                subtitle: 'Sales, Expenses, and Profit: 2014-2017',
-              }
-            };
-
-            var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
-
-            chart.draw(data, google.charts.Bar.convertOptions(options));
-          }
-        </script>
     </head>
     <body>
         <div class="modal hide">
@@ -199,47 +149,83 @@
         	var assetId = /*[[ ${assetId} ]]*/
         	var curYear = /*[[ ${year} ]]*/
         	var curMonth = /*[[ ${month} ]]*/
+        	var budgetRecordList = /*[[ ${budgetRecordList} ]]*/
         	/*]]>*/
         </script>
-        
+        <script type="text/javascript" src="js/budget.js"></script>
         <script type="text/javascript">
         	function pad(n, width) {
-            	n = n + '';
-            	return n.length >= width ? n : new Array(width - n.length + 1).join('0') + n;
-        	}
-        	
-            $(".js-example-tokenizer").select2({
-            tags: true,
-            tokenSeparators: [',', ' ']
-            })
-            
-            $('.pbt').on('click',function(){
-               $('.madal_layer').removeClass('hide');
-               $('.modal').removeClass('hide');
-            });
-            
-            $('.closebt').on('click',function(){
-               $('.madal_layer').addClass('hide');
-               $('.modal').addClass('hide');
-            });
-            
-            $(document).ready(function(){     
-                for (var i = 2021; i<=3500; i++) {
-                    $('.years').append(new Option(i));
-                }
-                for (var i = 1; i<=12; i++) {
-                    $('.months').append(new Option(pad(i, 2)));
-                }
-                for (var i =1; i<=31; i++) {
-                    $('.days').append(new Option(pad(i, 2)));
-                }
-                for (var category in categoryList) {
-                	$('.js-example-tokenizer').append(new Option(categoryList[category].name));
-                }
-            });
-            
-            
+        		n = n + '';
+        		return n.length >= width ? n : new Array(width - n.length + 1).join('0') + n;
+    		}
+    	
+        	$(".js-example-tokenizer").select2({
+        	tags: true,
+        	tokenSeparators: [',', ' ']
+        	})
+        
+        	$('.pbt').on('click',function(){
+        	   $('.madal_layer').removeClass('hide');
+        	   $('.modal').removeClass('hide');
+        	});
+        
+        	$('.closebt').on('click',function(){
+        	   $('.madal_layer').addClass('hide');
+       		   $('.modal').addClass('hide');
+        	});
+        
+        	$(document).ready(function(){     
+            	for (var i = 2021; i<=3500; i++) {
+            	    $('.years').append(new Option(i));
+            	}
+            	for (var i = 1; i<=12; i++) {
+            	    $('.months').append(new Option(pad(i, 2)));
+            	}
+            	for (var i =1; i<=31; i++) {
+            	    $('.days').append(new Option(pad(i, 2)));
+            	}
+            	for (var category in categoryList) {
+            		$('.js-example-tokenizer').append(new Option(categoryList[category].name));
+            	}
+        	});
         </script>
-        <script type="text/javascript" src="js/budget.js"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.load('current', {'packages':['bar']});
+        google.charts.setOnLoadCallback(drawPieChart);
+        google.charts.setOnLoadCallback(drawBarChart);
+
+        var chartData =[];
+        chartData.push(["Category", "Account"]);
+        for (var category in categoryList) {
+        	var account = 0;
+        	for (var budget in budgetRecordList) {
+        		if (budgetRecordList[budget].categoryId == categoryList[category].name) {
+        			account = account + budgetRecordList[budget].spend;
+        		}
+        	}
+        	if (account != 0) {
+        		chartData.push([categoryList[category].name, account]);
+        	}
+        }
+        
+        var options = {
+          title: 'Category Graph'
+        };
+        
+        function drawPieChart() {
+          var data = google.visualization.arrayToDataTable(chartData);
+          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+          chart.draw(data, options);
+        }
+
+        function drawBarChart() {
+        	var data = google.visualization.arrayToDataTable(chartData);
+          	var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+         	chart.draw(data, google.charts.Bar.convertOptions(options));
+        }
+        </script>
     </body>
 </html>
