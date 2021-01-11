@@ -41,7 +41,10 @@ var index = {
             });
             $('.flogo').on('click',function(){
                 window.location.href="main";
-            })
+            });
+            $('.addbt2').on('click', function() {
+            	_this.addDebt();
+            });
 		},
 		logout : function() {
 			$.ajax({
@@ -81,6 +84,27 @@ var index = {
 				data : JSON.stringify(data),
 			}).done(function(result) {
 				alert("SUCESS")
+				window.location.href="main";
+			}).fail(function (error) {
+				alert(error);
+			});
+		},
+		addDebt : function() {
+			var giveNtake = $('input[name=money]:checked').val();
+			var money = $('.debtMoney').val();
+			var data = {
+				"userId" : userId,
+				"name" : $('.name').val(),
+				"account" : giveNtake == "give" ? money : -1 * money
+			}
+			
+			$.ajax({
+				type: 'PUT',
+				url: '/debt/' + userId,
+				dataType: 'json',
+				contentType: 'application/json; charset=utf-8',
+				data : JSON.stringify(data),
+			}).done(function(result) {
 				window.location.href="main";
 			}).fail(function (error) {
 				alert(error);

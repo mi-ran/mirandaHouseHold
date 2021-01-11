@@ -42,7 +42,7 @@
                     <input type="radio" name="money" value="give">GIVE
                     <input type="radio" name="money" value="take">TAKE
                     <br/>
-                    금액 <input type="text" class="money">   
+                    금액 <input type="text" class="debtMoney">   
                 </form>
             </div>
             <div class="barea">
@@ -92,8 +92,7 @@
                     <p class="bij" th:if="${debtList.empty}">-</p>
                     <p class="bij" th:if="${!debtList.empty}" th:text="${debtList[0].name}"></p>
                     <h2 th:if="${debtList.empty}">0</h2>
-                    <h2 th:if="${!debtList.empty and debtList[0].borrowed==0}" th:text="${debtList[0].borrowing}">0</h2>
-                    <h2 th:if="${!debtList.empty and debtList[0].borrowing==0}" th:text="'-' + ${debtList[0].borrowed}">0</h2>
+                    <h2 th:text="${debtList[0].account}">0</h2>
                         <img class="rightbt rightbt2"
                              src="img/main_rightbbt.png">
                 </div>
@@ -125,6 +124,7 @@
         	/*<![CDATA[*/
         	var assetList = /*[[ ${assetList} ]]*/;
         	var userId = /*[[ ${name} ]]*/
+        	var debtList = /*[[ ${debtList} ]]*/
         	/*]]>*/
         </script>
         <script type="text/javascript" src="js/index.js"></script>

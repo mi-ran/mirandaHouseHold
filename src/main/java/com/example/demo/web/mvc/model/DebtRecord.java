@@ -17,15 +17,18 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(indexName = "debt")
-public class Debt {
+@Document(indexName = "debtRecord")
+public class DebtRecord {
 	@Id
 	@Field(type=FieldType.Text)
 	private String id;
 	@Field(type=FieldType.Text)
-	private String userId;
-	@Field(type=FieldType.Text)
-	private String name;
+	private String debtId;
+	@Field(type = FieldType.Date)
+    @JsonFormat(shape = JsonFormat.Shape.STRING)
+	private Date date;
 	@Field(type=FieldType.Integer)
-	private int account;
+	private int borrowed;  // 빌린돈
+	@Field(type=FieldType.Integer)
+	private int borrowing; // 빌려준 돈
 }
