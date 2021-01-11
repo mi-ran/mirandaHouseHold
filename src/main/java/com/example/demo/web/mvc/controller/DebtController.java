@@ -8,9 +8,11 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.demo.web.mvc.model.Debt;
 import com.example.demo.web.repository.DebtRepository;
@@ -45,6 +47,13 @@ public class DebtController {
 		List<Debt> debts = debtRepository.findByUserId(userId);
 		result.put("debts", debts);
 		return result;
+	}
+	
+	@ResponseBody
+	@RequestMapping(method = RequestMethod.PUT)
+	public boolean insertDebt(@PathVariable String userId, @RequestBody Debt debt) {
+		debtRepository.save(debt);
+		return true;
 	}
 	
 	/*
