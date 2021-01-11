@@ -1,0 +1,342 @@
+@charset "utf-8";
+@font-face {
+    font-family: 'timonsori';
+    src: url('../font/TmonMonsori.ttf');
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'sandol';
+    src:url('../font/AppleSDGothicNeoR.ttf');
+}
+/*reset*/
+*{margin: 0; padding: 0; box-sizing: border-box; text-decoration: none;}
+h2,p,h3,h4,th,tr {
+    font-family: 'sandol';
+    color: '1c1c1c';
+}
+.janaeck,.won,.jnumber,.jwon,.snumber,.swon {
+    font-family: 'timonsori';
+}
+h2 {
+    font-size: 80px;
+}
+h3 {
+    font-size: 40px;
+}
+h4 {
+    font-size: 30px;
+}
+p {
+    font-size: 20px;
+}
+body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    text-align: center;
+}
+#wrap {
+    width: 1920px;
+    height: auto;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.area,.marea,.narea1,.narea2,.middlebt,.pyo,.footerarea {
+    transform: skewY(7deg);
+}
+header {
+    transform: skewY(-7deg);
+    width: 1920px;
+    height: 200px;
+}
+/*marea*/
+.middle {
+    width: 1920px;
+    height: auto;
+    background-color: #8fc7b8;
+    padding-top: 50px;
+    margin-top: -5px;
+    position: relative;
+    transform: skewY(-7deg);
+}
+.marea {
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+}
+.user,.logoutbt,.mbt1,.mbt2 {
+    color: white;
+}
+.user,.logoutbt {
+    float: right;
+    margin-right: 50px;
+}
+.user {
+    margin-top: 11px;
+    margin-right: 100px;
+}
+.logoutbt {
+    width: 80px;
+    height: 50px;
+    line-height: 50px;
+}
+.logoutbt:hover {
+    background-color: #141414;
+}
+/*narea1*/
+.narea1 {
+    width: 1920px;
+    height: 300px;
+    overflow: hidden;
+}
+.gtname {
+    margin-bottom: 50px;
+}
+.leftbt,.rightbt {
+    width: 50px;
+    height: auto;
+}
+.leftbt {
+    float: left;
+    margin-left: 300px;
+}
+.rightbt {
+    float: right;
+    margin-right: 300px;
+}
+.janaeck,.won {
+    display: inline-block;
+}
+
+/*narea2*/
+.narea2 {
+    width: 1920px;
+    overflow: hidden;
+    height: 250px;
+}
+.year {
+    font-size: 30px;
+    display: inline-block;
+    margin-right: 10px;
+}
+.month {
+    margin-left: 10px;
+    display: inline-block;
+    font-size: 30px;
+}
+.jichul {
+    float: left;
+    margin-left: 600px;
+    margin-top: 60px;
+}
+.suib {
+    float: right;
+    margin-right: 600px;
+    margin-top: 60px;
+}
+.jnumber,.jwon,.snumber,.swon {
+    display: inline-block;
+}
+.totals,.totalj {
+    margin-bottom: 20px;
+}
+
+/*middlebt*/
+.middlebt {
+    width: 1920px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #4a4a4a;
+}
+.middlebt h4 {
+    color: white;
+}
+
+/*pyo*/
+.pyo {
+    width: 1920px;
+    height: 800px;
+    background-color: white;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.parea {
+    padding-top: 50px;
+    width: 775px;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+}
+.pyos th {
+    border-bottom: 1px solid #4a4a4a;
+    border-right: 1px solid #4a4a4a;
+    font-size: 20px;
+    height: 30px;
+}
+.pyos th:last-child {
+    border-right: none;
+}
+.pyos tr td {
+    border-right: 1px solid #4a4a4a;
+    height: 40px;
+}
+.pyos tr td:last-child {
+    border-right: none;
+}
+.p1 {
+    width: 55px;
+}
+.p3,.p4,.p5 {
+    width: 240px;
+}
+.pbt {
+    width: 80px;
+    height: auto;
+    position: absolute;
+    right: 50px;
+    top: 500px;
+}
+.sasunm {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    z-index: 1;
+}
+.whiteback {
+    width: 1920px;
+    height: 100px;
+    background-color: white;
+    margin-top: -120px;
+}
+/*footer*/
+.sasuns {
+    width: 1920px;
+    height: auto;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+}
+.gigi {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 250px;
+    background-color: #4a4a4a;
+    transform: skewY(-7deg);
+    text-align: center;
+}
+.footerarea {
+    transform: skewY(7deg);
+    padding-top: 30px;
+}
+.flogo {
+    display: block;
+    margin-bottom: 10px;
+}
+.map p {
+    display: inline-block;
+    color: white;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.copy {
+    color: white;
+    margin-top: 20px;
+}
+footer {
+    width: 100%;
+    height: 370px;
+    background-color: #4a4a4a;
+}
+
+/*modal_contants*/
+.modal {
+    width: 600px;
+    height: auto;
+    background-color: white;
+    position: fixed;
+    top: 20%;
+    right: 50%;
+    margin-right: -300px;
+    z-index: 3;
+}
+.madal_layer {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+}
+.minarea {
+    width: 600px;
+    height: 50px;
+    background-color: #8fc7b8;
+    line-height: 50px;
+}
+.minarea img {
+    height: 40px;
+    width: auto;
+    float: right;
+    margin-right: 20px;
+}
+.warea {
+    padding: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    line-height: 80px;
+}
+select {
+    width: 400px;
+    padding: 0px;
+}
+.meony_n,.money {
+    border-radius: 5px;
+    width: 400px;
+    height: 28px;
+    border: 0.5px solid #8d8d8d;
+}
+.money {
+    width: 300px;
+}
+.barea {
+    background-color: #4a4a4a;
+    width: 600px;
+    height: 50px;
+    line-height: 50px;
+    overflow: hidden;
+}
+.barea p {
+    color: white;
+    display: inline-block;
+}
+.addbt {
+    float: left;
+    margin-left: 20px;
+}
+.closebt {
+    float: right;
+    margin-right: 20px;
+}
+.name {
+    width: 415px;
+    padding: 4.5px;
+}
+.months {
+    width: 120px;
+    padding: 5px;
+}
+.days {
+    width: 120px;
+    padding: 5px;
+}
+.years {
+    width: 120px;
+    padding: 5px;
+}
+
+.hide {
+    display: none;
+}
