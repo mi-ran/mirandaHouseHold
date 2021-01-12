@@ -35,6 +35,12 @@ var index = {
             $('.rightbt1').on('click', function() {
             	_this.showNextAsset();
             });
+            $('.leftbt2').on('click', function() {
+            	_this.showAgoDebt();
+            });
+            $('.rightbt2').on('click', function() {
+            	_this.showNextDebt();
+            });
             
             $('.logo').on('click',function(){
                 window.location.href="main";
@@ -127,6 +133,24 @@ var index = {
 			var account = assetList[assetIndex].account.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 			$('.bank').text(assetList[assetIndex].assetName);
 			$('.assetAccount').text(assetList[assetIndex].account);
+		},
+		showNextDebt : function() {
+			debtIndex = debtIndex + 1;
+			if (debtIndex == debtList.length) {
+				debtIndex = 0;
+			}
+			var account = debtList[debtIndex].account.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+			$('.bij').text(debtList[debtIndex].name);
+			$('.debtAccount').text(account);
+		},
+		showAgoDebt : function() {
+			debtIndex = debtIndex - 1;
+			if (debtIndex == -1) {
+				debtIndex = debtList.length - 1;
+			}
+			var account = debtList[debtIndex].account.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+			$('.bij').text(debtList[debtIndex].name);
+			$('.debtAccount').text(account);
 		}
 };
 
