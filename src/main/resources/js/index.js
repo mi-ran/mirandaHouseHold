@@ -10,6 +10,9 @@ var index = {
 			$('.bank').on('click', function() {
 				_this.goAssetView();
 			});
+			$('.bij').on('click', function() {
+				_this.goDebtView();
+			});
             $('.plus1').on('click',function(){
                $('.madal_layer').show();
                $('.modal').show();
@@ -73,6 +76,10 @@ var index = {
 				urlVar = urlVar + assetList[assetIndex].id;
 			}
 			
+			window.location.href=urlVar;
+		},
+		goDebtView : function() {
+			var urlVar = '/debtView';
 			window.location.href=urlVar;
 		},
 		addAsset : function() {
