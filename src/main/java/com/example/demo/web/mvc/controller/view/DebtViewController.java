@@ -25,6 +25,9 @@ public class DebtViewController {
 	 */
 	@RequestMapping(value = "/debtView", method = RequestMethod.GET)
 	public String assetView(HttpSession session, Model model) {
+		String userId = (String)session.getAttribute("LOGIN_ID");
+		
+		model.addAttribute("name", userId);
 		return "giveNtake.html";
 	}
 }
