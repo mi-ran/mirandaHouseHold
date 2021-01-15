@@ -4,6 +4,7 @@ var debt = {
 			$('.logoutbt').on('click', function () {
 				_this.logout();
 			});
+			_this.setTotal();
 		},
 		logout : function() {
 			$.ajax({
@@ -16,6 +17,16 @@ var debt = {
 			}).fail(function (error) {
 				alert(error);
 			});
+		},
+		setTotal : function() {
+			var totalGive = 0;
+			var totalTake = 0;
+			for (var r in debtRecord) {
+				totalGive = totalSpend + debtRecord[r].borrowing;
+				totalTake = totalImport + debtRecord[r].borrowed;
+			}
+			$('.jnumber').text(totalGive);
+			$('.snumber').text(totalTake);
 		}
 }
 debt.init();

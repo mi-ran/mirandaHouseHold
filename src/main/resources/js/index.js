@@ -79,7 +79,12 @@ var index = {
 			window.location.href=urlVar;
 		},
 		goDebtView : function() {
-			var urlVar = '/debtView';
+			var urlVar = '/debtView?debtId=';
+			if (debtList.length == 0) {
+				urlVar = urlVar + '-1';
+			} else {
+				urlVar = urlVar + debtList[debtIndex].id;
+			}
 			window.location.href=urlVar;
 		},
 		addAsset : function() {
