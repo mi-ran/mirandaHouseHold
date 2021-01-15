@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(indexName = "debtRecord")
+@Document(indexName = "debtrecord")
 public class DebtRecord {
 	@Id
 	@Field(type=FieldType.Text)
@@ -25,7 +25,7 @@ public class DebtRecord {
 	@Field(type=FieldType.Text)
 	private String debtId;
 	@Field(type = FieldType.Date)
-    @JsonFormat(shape = JsonFormat.Shape.STRING)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern="yyyy-MM-dd")
 	private Date date;
 	@Field(type=FieldType.Integer)
 	private int borrowed;  // 빌린돈

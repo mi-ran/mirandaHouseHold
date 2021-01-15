@@ -63,17 +63,14 @@
                     <a href="#">
                         <img class="leftbt" src="img/menu1_leftbt.png">
                     </a>
-                    <h2 class="janaeck">1,000,000</h2>
+                    <h2 class="janaeck" th:text="${debt.account}">1,000,000</h2>
                     <p class="won">원</p>
                     <a href="#">
                         <img class="rightbt" src="img/menu1_rightbt.png">
                     </a>
                 </div>
                 
-                <div class="narea2">
-                    <p class="year">2021</p>
-                    <p class="month">01월</p>                    
-                    
+                <div class="narea2">                   
                     <div class="jichul">
                         <p class="totalj">총 GIVE</p>
                         <h3 class="jnumber">283,000</h3>
@@ -92,15 +89,15 @@
                 <div class="pyo">
                     <div class="parea">
                     <table class="pyos" border="0">
+                    	<th style="display: none"></th>
                         <th class="p1">날짜</th>
                         <th class="p3">GIVE</th>
                         <th class="p4">TAKE</th>
-                        <th class="p5">잔액</th>
-                        <tr>
-                            <td>12.1</td>
-                            <td>4,000,000</td>
-                            <td></td>
-                            <td>4,000,000</td>
+                        <tr th:each="record : ${debtRecord}">
+                        	<td th:text="${record.id}"></td>
+                        	<td th:text="${record.date}"></td>
+                        	<td th:text="${record.borrowing}"></td>
+                        	<td th:text="${record.borrpwed}"></td>
                         </tr>
                     </table>
                         <img class="pbt" src="img/listpbt.png">
@@ -155,6 +152,12 @@
                     $('.days').append(new Option(i));
                 }
             });
+        </script>
+        <script th:inline="javascript">
+        	/*<![CDATA[*/
+        	var userId = /*[[ ${name} ]]*/
+        	var debtRecord = /*[[ ${debtRecord} ]]*/
+        	/*]]>*/
         </script>
         <script type="text/javascript" src="js/debt.js"></script>
     </body>

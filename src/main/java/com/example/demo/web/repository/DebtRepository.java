@@ -8,7 +8,7 @@ import org.springframework.data.elasticsearch.repository.ElasticsearchCrudReposi
 
 import com.example.demo.web.mvc.model.Debt;
 
-public interface DebtRepository extends ElasticsearchCrudRepository<Debt, Integer>{
+public interface DebtRepository extends ElasticsearchCrudRepository<Debt, String>{
 	
 	@Query("{\"match\":{"
 			+ "\"userId\": {"
