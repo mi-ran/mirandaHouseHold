@@ -35,10 +35,10 @@ public class DebtViewController {
 	 * Debt 뷰를 리턴한다.
 	 */
 	@RequestMapping(value = "/debtView", method = RequestMethod.GET)
-	public String assetView(HttpSession session, Model model, String debtId) {
+	public String debtView(HttpSession session, Model model, @RequestParam String debtId) {
 		String userId = (String)session.getAttribute("LOGIN_ID");
 		Optional<Debt> debt = debtRepository.findById(debtId);
-		List<DebtRecord> debtRecord = debtRecordRepository.findByUserIdAndAssetId(userId, debtId);
+		List<DebtRecord> debtRecord = debtRecordRepository.findByDebtId(debtId);
 		
 		model.addAttribute("name", userId);
 		model.addAttribute("debt", debt.orElse(null));
