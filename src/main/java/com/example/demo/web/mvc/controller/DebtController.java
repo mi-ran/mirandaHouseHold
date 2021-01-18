@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.demo.web.mvc.model.Debt;
+import com.example.demo.web.mvc.model.DebtRecord;
+import com.example.demo.web.repository.DebtRecordRepository;
 import com.example.demo.web.repository.DebtRepository;
 
 @Controller
@@ -23,6 +26,9 @@ public class DebtController {
 
 	@Autowired
 	DebtRepository debtRepository;
+	
+	@Autowired
+	DebtRecordRepository debtRecordRepository;
 	
 	/**
 	 *  GET
@@ -53,6 +59,23 @@ public class DebtController {
 	@RequestMapping(method = RequestMethod.PUT)
 	public boolean insertDebt(@PathVariable String userId, @RequestBody Debt debt) {
 		debtRepository.save(debt);
+		return true;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/record", method = RequestMethod.PUT)
+	public boolean insertDebtRecord(@PathVariable String userId, @RequestBody DebtRecord debtRecord) {
+		Optional<Debt> optionalDebt = debtRepository.findById(debtRecord.getDebtId());
+		if (optionalDebt.isPresent()) {
+			Debt debt = optionalDebt.get();
+			int account = debt.getAccount();
+			account = account + debtRecord.getBorrowing();
+			account = account - debtRecord.getBorrowed();
+			debt.setAccount(account);
+			
+			debtRepository.save(debt);
+			debtRecordRepository.save(debtRecord);
+		}
 		return true;
 	}
 	

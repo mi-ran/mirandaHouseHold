@@ -20,10 +20,6 @@
                     월 <select class="months" name="months"></select>
                     일 <select class="days" name="days"></select>
                     <br/>
-                    이름 <select class="name" name="bank" >
-                        <option value="sinhan">조찬미</option>
-                        <option value="kakao">김현우</option>
-                    </select>
                     <br/>             
                         금액 <input type="text" class="money">
                         <input type="radio" name="money" value="give">GIVE
@@ -73,13 +69,13 @@
                 <div class="narea2">                   
                     <div class="jichul">
                         <p class="totalj">총 GIVE</p>
-                        <h3 class="jnumber">283,000</h3>
+                        <h3 class="jnumber"></h3>
                         <p class="jwon">원</p>
                     </div>
                     
                     <div class="suib">
                         <p class="totals">총 TAKE</p>
-                        <h3 class="snumber">4,000,000</h3>
+                        <h3 class="snumber"></h3>
                         <p class="swon">원</p>
                     </div>
                 </div>
@@ -94,10 +90,10 @@
                         <th class="p3">GIVE</th>
                         <th class="p4">TAKE</th>
                         <tr th:each="record : ${debtRecord}">
-                        	<td th:text="${record.id}"></td>
+                        	<td th:text="${record.id}" style="display: none"></td>
                         	<td th:text="${record.date}"></td>
                         	<td th:text="${record.borrowing}"></td>
-                        	<td th:text="${record.borrpwed}"></td>
+                        	<td th:text="${record.borrowed}"></td>
                         </tr>
                     </table>
                         <img class="pbt" src="img/listpbt.png">
@@ -157,6 +153,7 @@
         	/*<![CDATA[*/
         	var userId = /*[[ ${name} ]]*/
         	var debtRecord = /*[[ ${debtRecord} ]]*/
+        	var debt = /*[[ ${debt} ]]*/
         	/*]]>*/
         </script>
         <script type="text/javascript" src="js/debt.js"></script>
