@@ -8,6 +8,24 @@ var debtObj = {
 				_this.addDebtRecord();
 			});
 			_this.setTotal();
+			$('.removeRecord').on('click', function() {
+            	var tr = $(this).parent().parent();
+    			var recordId = tr.children().eq(0).text();
+            	
+            	$.ajax({
+    				type: 'DELETE',
+    				url: '/debt/' + userId + '/record',
+    				dataType: 'json',
+    				contentType: 'application/json; charset=utf-8',
+    				data : recordId,
+    			}).done(function(result) {
+    				alert("삭제 되었습니다.");
+    				var urlVal = '/debtView?debtId=' + debt.id;
+        			window.location.href=urlVal;
+    			}).fail(function (error) {
+    				alert(error);
+    			});
+            });
 		},
 		logout : function() {
 			$.ajax({

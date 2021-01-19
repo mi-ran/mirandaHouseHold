@@ -79,6 +79,35 @@ public class DebtController {
 		return true;
 	}
 	
+	@ResponseBody
+	@RequestMapping(value = "/record", method = RequestMethod.DELETE)
+	public boolean deleteDebtRecord(@PathVariable String userId, @RequestBody String debtRecordId) {
+		Optional<DebtRecord> optionalRecord = debtRecordRepository.findById(debtRecordId);
+		if (!optionalRecord.isPresent()) {
+			System.out.println(debtRecordId + " : NOT FOUND RECORD");
+			return false;
+		}
+		
+		DebtRecord debtRecord = optionalRecord.get();
+		
+		Optional<Debt> optionalDebt = debtRepository.findById(debtRecord.getDebtId());
+		if (!optionalDebt.isPresent()) {
+			System.out.println(debtRecord.getDebtId() + " : NOT FOUND RECORD");
+			return false;
+		}
+		
+		Debt debt = optionalDebt.get();
+		int account = debt.getAccount();
+		account = account - debtRecord.getBorrowing();
+		account = account + debtRecord.getBorrowed();
+		debt.setAccount(account);
+		debtRepository.save(debt);
+		
+		debtRecordRepository.deleteById(debtRecordId);
+		return true;
+		
+	}
+	
 	/*
 	// debtId로 검색해서 하나의 debt를 조회
 	// TODO 날짜 검색, displayCount
