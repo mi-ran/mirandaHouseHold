@@ -89,11 +89,13 @@
                         <th class="p1">날짜</th>
                         <th class="p3">GIVE</th>
                         <th class="p4">TAKE</th>
+                        <th class="p5">  </th>
                         <tr th:each="record : ${debtRecord}">
                         	<td th:text="${record.id}" style="display: none"></td>
                         	<td th:text="${record.date}"></td>
                         	<td th:text="${record.borrowing}"></td>
                         	<td th:text="${record.borrowed}"></td>
+                        	<td><p class="removeRecord">X</p></td>
                         </tr>
                     </table>
                         <img class="pbt" src="img/listpbt.png">
